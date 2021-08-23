@@ -15,7 +15,9 @@ designed to be simple to use and easy to understand.
 ---
 ### Table of Contents
 * [Home](/README.md)
+* [Overview](/overview/README.md)
 * [Commands](/commands/README.md)
+  * [Comments](/comments/README.md)
   * [.CreateScene](/commands/createScene/README.md)
     * [.addText](/commands/createScene/addText/README.md)
     * [.addOption](/commands/createScene/addOption/README.md)
