@@ -15,5 +15,6 @@
     * [.link](/commands/createSavePoint/link/README.md)
   * [CreateDeadEnd](/commands/createDeadEnd/README.md)
     * [.addText](/commands/createDeadEnd/addText/README.md)
+  * [.createOption](/commands/createOption/README.md)
   * [.save](/commands/save/README.md)
   * [.start](/commands/start/README.md)
