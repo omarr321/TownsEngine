@@ -1,5 +1,6 @@
 ---
 
+<<<<<<< HEAD
 * [Home](/README.md)
 * [Overview](/OVERVIEW.md)
 * [Commands](/commands/COMMANDS.md)
@@ -22,3 +23,27 @@
   * [.save](/commands/SAVE.md)
   * [.start](/commands/START.md)
 ---
+=======
+> |-[Home](/README.md)
+> |-[Overview](/OVERVIEW.md)
+> |-[Commands](/commands/COMMANDS.md)
+> ||-[Comments](/commands/COMMENTS.md)
+> ||-[.CreateScene](/commands/createScene/MAIN.md)
+> |||-[.addText](/commands/createScene/ADDTEXT.md)
+> |||-[.addOption](/commands/createScene/ADDOPTION.md)
+> ||-[.CreateStart](/commands/createStart/MAIN.md)
+> |||-[.addText](/commands/createStart/ADDTEXT.md)
+> |||-[.addOption](/commands/createStart/ADDOPTION.md)
+> ||-[.CreateSavePoint](/commands/createSavePoint/MAIN.md)
+> |||-[.addText](/commands/createSavePoint/ADDTEXT.md)
+> |||-[.link](/commands/createSavePoint/LINK.md)
+> ||-[.createTextBlock](/commands/createTextBlock/MAIN.md)
+> |||-[.addText](/commands/createTextBlock/ADDTEXT.md)
+> ||-[.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
+> |||-[.addText](/commands/createDeadEnd/ADDTEXT.md)
+> ||-[.createOption](/commands/createOption/MAIN.md)
+> |||-[.link](/commands/createOption/LINK.md)
+> ||-[.save](/commands/SAVE.md)
+> ||-[.start](/commands/START.md)
+---
+>>>>>>> 42924e3bfe8c83841233895d6407e623c7701633
