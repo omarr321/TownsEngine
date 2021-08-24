@@ -45,15 +45,11 @@ have scene attached to them so when you select that option, it pick the scene co
 this functionality in mind.
 
 > Example script with two scenes:
-> start = .createStart
-> start.addText "You wake up in your bed."
-> 
-> end = .createDeadEnd
-> end.addText "You go back to sleep!"
-> 
-> option1 = .createOption "Go back to sleep"
-> option1.link end
->
-> start.addOption option1
->
-> .start
+```start = .createStart
+start.addText "You wake up in your bed."
+end = .createDeadEnd
+end.addText "You go back to sleep!"
+option1 = .createOption "Go back to sleep"
+option1.link end
+start.addOption option1
+.start```
