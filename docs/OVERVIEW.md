@@ -52,4 +52,5 @@ end.addText "You go back to sleep!"
 option1 = .createOption "Go back to sleep"
 option1.link end
 start.addOption option1
-.start```
+.start
+```
