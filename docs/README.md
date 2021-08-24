@@ -26,7 +26,7 @@ designed to be simple to use and easy to understand.
     * [.addOption](/commands/createStart/ADDOPTION.md)
   * [.CreateSavePoint](/commands/createSavePoint/MAIN.md)
     * [.addText](/commands/createSavePoint/ADDTEXT.md)
-    * [.link](/commands/createSavePoint/link/README.md)
+    * [.link](/commands/createSavePoint/LINK.md)
   * [.createTextBlock](/commands/createTextBlock/MAIN.md)
     * [.addText](/commands/createTextBlock/ADDTEXT.md)
   * [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
