@@ -3,7 +3,7 @@
 
 ---
 # overview
-> This is an overview of home the language works. After you read this take a look at [commands](/commands/COMMANDS.md).
+> This is an overview of home the language works.
 
 ---
 ## fundamentals
