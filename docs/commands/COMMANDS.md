@@ -22,7 +22,7 @@ Add an option to the scene.
 Creates an empty start scene. There can only be one start scene. If you make another start scene, it will replace the older one declared first.
 ### [.addTitle](/commands/createStart/ADDTITLE.md)
 Add a title to the title screen.
-### [.addDesc](/commands/createStart/ADDDESC/md)
+### [.addDesc](/commands/createStart/ADDDESC.md)
 Add a descrption to the title screen.
 ### [.addText](/commands/createStart/ADDTEXT.md)
 Adds text to scene.
