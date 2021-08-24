@@ -6,41 +6,60 @@
 This is a general overview of all the commands and breiftly what it does. You can click on the command to learn more.
 
 ---
-#### [Comments](/commands/COMMENTS.md)
+## [Comments](/commands/COMMENTS.md)
+Makes comments in the code.
+---
+## [.CreateScene](/commands/createScene/MAIN.md)
+Creates an empty scene.
+### [.addText](/commands/createScene/ADDTEXT.md)
+Add text to a scene or changes the text that was there.
+### [.addOption](/commands/createScene/ADDOPTION.md)
+Add an option to the scene.
 
 ---
-#### [.CreateScene](/commands/createScene/MAIN.md)
-##### [.addText](/commands/createScene/ADDTEXT.md)
-##### [.addOption](/commands/createScene/ADDOPTION.md)
+## [.CreateStart](/commands/createStart/MAIN.md)
+Creates an empty start scene. There can only be one start scene. If you make another start scene, it will replace the older one declared first.
+### [.addTitle](/commands/createStart/ADDTITLE.md)
+Add a title to the title screen.
+### [.addDesc](/commands/createStart/ADDDESC/md)
+Add a descrption to the title screen.
+### [.addText](/commands/createStart/ADDTEXT.md)
+Adds text to scene.
+### [.addOption](/commands/createStart/ADDOPTION.md)
+Adds options to the scene.
 
 ---
-#### [.CreateStart](/commands/createStart/MAIN.md)
-##### [.addTitle](/commands/createStart/ADDTITLE.md)
-##### [.addDesc](/commands/createStart/ADDDESC/md)
-##### [.addText](/commands/createStart/ADDTEXT.md)
-##### [.addOption](/commands/createStart/ADDOPTION.md)
+## [.CreateSavePoint](/commands/createSavePoint/MAIN.md)
+Creates a save point scene.
+### [.addText](/commands/createSavePoint/ADDTEXT.md)
+Add text the the save point.
+### [.link](/commands/createSavePoint/LINK.md)
+Add where the save point goes to next.
 
 ---
-#### [.CreateSavePoint](/commands/createSavePoint/MAIN.md)
-##### [.addText](/commands/createSavePoint/ADDTEXT.md)
-##### [.link](/commands/createSavePoint/LINK.md)
+## [.createTextBlock](/commands/createTextBlock/MAIN.md)
+Creates a text block scene.
+### [.addText](/commands/createTextBlock/ADDTEXT.md)
+Adds text to the text block.
 
 ---
-#### [.createTextBlock](/commands/createTextBlock/MAIN.md)
-##### [.addText](/commands/createTextBlock/ADDTEXT.md)
+## [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
+Creates a dead-end scene.
+### [.addText](/commands/createDeadEnd/ADDTEXT.md)
+Adds text to the dead=end scene.
 
 ---
-#### [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
-##### [.addText](/commands/createDeadEnd/ADDTEXT.md)
+## [.createOption](/commands/createOption/MAIN.md)
+Creates an option.
+### [.link](/commands/createOption/LINK.md)
+Adds a link to where the options go.
 
 ---
-#### [.createOption](/commands/createOption/MAIN.md)
-##### [.link](/commands/createOption/LINK.md)
+## [.save](/commands/SAVE.md)
+Saves the story.
 
 ---
-#### [.save](/commands/SAVE.md)
-
----
-#### [.start](/commands/START.md)
+## [.start](/commands/START.md)
+Runs the story.
 
 ---
