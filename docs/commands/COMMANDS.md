@@ -8,6 +8,7 @@ This is a general overview of all the commands and breiftly what it does. You ca
 ---
 ## [Comments](/commands/COMMENTS.md)
 Makes comments in the code.
+
 ---
 ## [.CreateScene](/commands/createScene/MAIN.md)
 Creates an empty scene.
