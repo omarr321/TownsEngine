@@ -9,7 +9,7 @@
     * [.addOption](/commands/createScene/ADDOPTION.md)
   * [.CreateStart](/commands/createStart/MAIN.md)
     * [.addTitle](/commands/createStart/ADDTITLE.md)
-    * [.addDesc](/commands/createStart/ADDDESC/md)
+    * [.addDesc](/commands/createStart/ADDDESC.md)
     * [.addText](/commands/createStart/ADDTEXT.md)
     * [.addOption](/commands/createStart/ADDOPTION.md)
   * [.CreateSavePoint](/commands/createSavePoint/MAIN.md)
