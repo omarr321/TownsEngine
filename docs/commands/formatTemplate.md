@@ -1,13 +1,6 @@
----
-| [**BACK TO HOME**](/README.md) | [**BACK TO COMMANDS**](/commands/COMMANDS.md) |
-
----
-# .Save
 **About:**
-```.Save``` is used to save your story so you can play it without recompling the code everytime. it will save it as a ```.town``` extension.
 
 **Usage:**
-```.Save <FileName> <Path>```
 
 **Args:**
 
@@ -44,8 +37,7 @@ text-align: center;
 
 | | |
 |------------:|:--------------------|
-| \<FileName\> | The name that you want to name the file. |
-| \<Path\> | The path where you want to save the file. |
+|  |  |
 
 </div>
 

@@ -31,13 +31,13 @@ designed to be simple to use and easy to understand.
   * [.CreateSavePoint](/commands/createSavePoint/MAIN.md)
     * [.addText](/commands/createSavePoint/ADDTEXT.md)
     * [.link](/commands/createSavePoint/LINK.md)
-  * [.createTextBlock](/commands/createTextBlock/MAIN.md)
+  * [.CreateTextBlock](/commands/createTextBlock/MAIN.md)
     * [.addText](/commands/createTextBlock/ADDTEXT.md)
   * [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
     * [.addText](/commands/createDeadEnd/ADDTEXT.md)
-  * [.createOption](/commands/createOption/MAIN.md)
+  * [.CreateOption](/commands/createOption/MAIN.md)
     * [.link](/commands/createOption/LINK.md)
-  * [.save](/commands/SAVE.md)
-  * [.start](/commands/START.md)
+  * [.Save](/commands/SAVE.md)
+  * [.Start](/commands/START.md)
 
 ---

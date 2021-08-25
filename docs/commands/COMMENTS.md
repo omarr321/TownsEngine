@@ -7,9 +7,9 @@
 Single line comments are denoted by the ```>``` symbol. Any line that starts with a ```>``` will be ignored by the interpreter.
 > Examples of comments:
 > 
-> `>This is a comment!`
+> `> This is a comment!`
 > 
-> `>This one is as well!`
+> `> This one is as well!`
 
 > Examples of bad comments:
 > 
