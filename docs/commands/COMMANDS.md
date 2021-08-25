@@ -2,6 +2,7 @@
 | [**BACK TO HOME**](/README.md) |
 
 ---
+
 # Commands
 This is a general overview of all the commands and their usage. You can click on any command to learn it in detail.
 
@@ -41,18 +42,6 @@ text-align: center;
 |   Comments   | Makes comments in the code. |
 |------------:|:--------------------|
 | | |
-
-| .CreateScene | Creates an empty scene. |
-|------------:|:--------------------|
-| .addText | Adds text to a scene or changes existing text. |
-| .addOption | Adds an option object to the scene. |
-
-| .CreateStart | Creates an empty scene the engine uses as a starting point. If a start already exists, the new scene will take its place. |
-|------------:|:--------------------|
-| .addTitle | Adds a title to the title screen. |
-| .addDesc | Adds a descrption to the title screen. |
-| .addText | Adds text to the start scene or changes existing text. |
-| .addOption | Adds an option to the start scene. |
 
 | .CreateSavePoint | Creates a save point scene. |
 |------------:|:--------------------|
