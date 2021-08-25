@@ -2,7 +2,7 @@
 | [**BACK TO HOME**](/README.md) |
 
 ---
-# commands
+# Commands
 This is a general overview of all the commands and their usage. You can click on any command to learn it in detail.
 
 ---
@@ -14,9 +14,15 @@ td, th {
 </style>
 
 <style>
-.niceTables {
-    width: 400px;
+td:nth-child(1) {
+  width: 150px;
+  }
+
+/* the second */
+td:nth-child(2) {
+  width: 500px;
 }
+
 .niceTables thg {
 background: grey;
 word-wrap: break-word;
@@ -34,6 +40,7 @@ text-align: center;
 
 |   Comments   | Makes comments in the code. |
 |------------:|:--------------------|
+| | |
 
 | .CreateScene | Creates an empty scene. |
 |------------:|:--------------------|
@@ -66,8 +73,10 @@ text-align: center;
 
 | .Save | Saves the story. |
 |------------:|:--------------------|
+| | |
 
 | .Start | Runs the story. |
 |------------:|:--------------------|
+| | |
 
 </div>
