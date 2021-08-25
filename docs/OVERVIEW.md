@@ -2,18 +2,20 @@
 | [**BACK TO HOME**](/README.md) |
 
 ---
-# overview
-> This is an overview of home the language works.
+# Overview
+> This is an overview of how the language works.
 
 ---
-## fundamentals
-The language is designed to be easy to use and to understand.
-In this section we will talk about how it works and how to write it out.
+## Fundamentals
+The language is designed to be easy to use and to understand. In this section, will explain the language's syntax, as well as good programming practices for naming variables.
+
 #### 1. Syntax
-The syntax is very simple. A command is a line of text with a newline at the end.
-If there is no newline, the interpiter will read it as one command. Variables must start with a letter either up or lower case
-and can contain letters, numbers, and underscores. Commands starts with dots followed by the command with any inputs after that with
-a space inbeween the commands and separate inputs.
+The syntax of this language is simple to implement. A **command** is a line of text, followed by a newline. Note that newlines are used to delimit commands and indicate its end. Variables must start with a case-insensitive letter and can contain letters, numbers, and underscores. A command starts with a period (.) followed by the command name and any inputs separated by whitespace.
+
+```.commandName "input"```
+
+<!-- Might want to explain this section below about VARIABLE names. Explain the case used and why these examples are good .-->
+
 > Example of good variable names:
 > * var1
 > * VarTwo
@@ -38,14 +40,16 @@ a space inbeween the commands and separate inputs.
 > * var1.addText"This is the text to add."
 > * var1.addText This is the text to add.
 
-#### 2. How to use
-The langauge is designed to do branching stories. This section will teach you how the program environment works and how to use it.
-The program will be composed of Scenes whether it a start, textBlock, etc. Each scene can have options attached to them. The options must
-have scene attached to them so when you select that option, it pick the scene connected to that option. Special scenes like the Save Point or Dead End work with
-this functionality in mind.
+#### 2. Command Usage
+The language is designed to work with branching stories. This section is an overview of the programming environment and a guide for implementing commands.
+
+The program is composed of objects called **Scenes**. Some of the various scenes that can be used include "start", "textBlock", etc. Each scene can have options attached to them. **Options** operate as independent objects linked to Scenes, and are interchangeable. Special scenes such as the "savePoint" and "deadEnd" work with this functionality in mind.
+
+<!-- I'm not sure if you meant to say "Save Point" and "Dead End" instead of its camel case equivalent -->
 
 > Example script with two scenes:
-```start = .createStart
+```
+start = .createStart
 start.addText "You wake up in your bed."
 end = .createDeadEnd
 end.addText "You go back to sleep!"
