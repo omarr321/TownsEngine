@@ -3,7 +3,7 @@
 
 ---
 # commands
-This is a general overview of all the commands and breiftly what it does. You can click on the command to learn more.
+This is a general overview of all the commands and their usage. You can click on any command to learn it in detail.
 
 ---
 
@@ -22,12 +22,12 @@ background: grey;
 word-wrap: break-word;
 text-align: center;
 }
-.niceTables tr:nth-child(1) { background: white; }
-.niceTables tr:nth-child(2) { background: white; }
-.niceTables tr:nth-child(3) { background: white; }
-.niceTables tr:nth-child(4) { background: white; }
-.niceTables tr:nth-child(5) { background: white; }
-.niceTables tr:nth-child(6) { background: white; }
+.niceTables tr:nth-child(1) { background: #F2F2F2; }
+.niceTables tr:nth-child(2) { background: #F2F2F2; }
+.niceTables tr:nth-child(3) { background: #F2F2F2; }
+.niceTables tr:nth-child(4) { background: #F2F2F2; }
+.niceTables tr:nth-child(5) { background: #F2F2F2; }
+.niceTables tr:nth-child(6) { background: #F2F2F2; }
 </style>
 
 <div class="niceTables">
@@ -35,53 +35,37 @@ text-align: center;
 |   Comments   | Makes comments in the code. |
 |------------:|:--------------------|
 
----
-
 | .CreateScene | Creates an empty scene. |
 |------------:|:--------------------|
-| .addText | Add text to a scene or changes the text that was there. |
-| .addOption | Add an option to the scene. |
+| .addText | Adds text to a scene or changes existing text. |
+| .addOption | Adds an option object to the scene. |
 
----
-
-| .CreateStart | Creates an empty start scene. There can only be one start scene. If you make another start scene, it will replace the older one declared first. |
+| .CreateStart | Creates an empty scene the engine uses as a starting point. If a start already exists, the new scene will take its place. |
 |------------:|:--------------------|
-| .addTitle | Add a title to the title screen. |
-| .addDesc | Add a descrption to the title screen. |
-| .addText | Add text to a scene or changes the text that was there. |
-| .addOption | Add an option to the scene. |
-
----
+| .addTitle | Adds a title to the title screen. |
+| .addDesc | Adds a descrption to the title screen. |
+| .addText | Adds text to the start scene or changes existing text. |
+| .addOption | Adds an option to the start scene. |
 
 | .CreateSavePoint | Creates a save point scene. |
 |------------:|:--------------------|
-| .addText | Add text the the save point. |
-| .link | Add where the save point goes to next. |
-
----
+| .addText | Adds text the the save point or changes existing text. |
+| .link | Adds where the save point goes to next. |
 
 | .CreateTextBlock | Creates a text block scene. |
 |------------:|:--------------------|
-| .addText | Adds text to the text block. |
-
----
+| .addText | Adds text to the text block or changes existing text. |
 
 | .CreateDeadEnd | Creates a dead-end scene. |
 |------------:|:--------------------|
-| .addText | Adds text to the dead-end scene. |
-
----
+| .addText | Adds text to the dead-end scene or changes existing text. |
 
 | .CreateOption | Creates an option. |
 |------------:|:--------------------|
 | .link | Adds a link to where the option goes. |
 
----
-
-| .Save | saves the story. |
+| .Save | Saves the story. |
 |------------:|:--------------------|
-
----
 
 | .Start | Runs the story. |
 |------------:|:--------------------|
