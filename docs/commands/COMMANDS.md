@@ -2,83 +2,70 @@
 | [**BACK TO HOME**](/README.md) |
 
 ---
-# commands
+
+# Commands
 This is a general overview of all the commands and their usage. You can click on any command to learn it in detail.
 
-<!-- I got a bit confused about how to implement the commands until reading the Overview. Should be fine, but I provided a brief reference to the usage. -->
-
-#### General usage reference:
-
-```.commandName "input"```
-
----
-## [Comments](/commands/COMMENTS.md)
-Makes comments in the code.
-
-<!-- Follows syntax? -->
-
----
-## [.CreateScene](/commands/createScene/MAIN.md)
-Creates an empty scene.
-### [.addText](/commands/createScene/ADDTEXT.md)
-Adds text to a scene or changes existing text.
-### [.addOption](/commands/createScene/ADDOPTION.md)
-Adds an option object to the scene.
-
-<!-- Attaches? -->
-
----
-## [.CreateStart](/commands/createStart/MAIN.md)
-Creates an empty scene the engine uses as a starting point. If a start already exists, the new scene will take its place.
-### [.addTitle](/commands/createStart/ADDTITLE.md)
-Adds a title to the title screen.
-### [.addDesc](/commands/createStart/ADDDESC.md)
-Adds a description to the title screen.
-### [.addText](/commands/createStart/ADDTEXT.md)
-Adds text to the scene.
-### [.addOption](/commands/createStart/ADDOPTION.md)
-Adds an option to the scene.
-
----
-## [.CreateSavePoint](/commands/createSavePoint/MAIN.md)
-Creates a save point scene.
-### [.addText](/commands/createSavePoint/ADDTEXT.md)
-Adds text to the save point.
-### [.link](/commands/createSavePoint/LINK.md)
-Adds where the save point goes to next.
-
-<!-- Elaborate on what a savepoint is -->
-
----
-## [.CreateTextBlock](/commands/createTextBlock/MAIN.md)
-Creates a text block scene.
-### [.addText](/commands/createTextBlock/ADDTEXT.md)
-Adds text to the text block.
-
-<!-- Elaborate on what a text block scene is -->
-
----
-## [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
-Creates a dead-end scene.
-### [.addText](/commands/createDeadEnd/ADDTEXT.md)
-Adds text to the dead-end scene.
-
----
-## [.CreateOption](/commands/createOption/MAIN.md)
-Creates an option object.
-### [.link](/commands/createOption/LINK.md)
-Adds a link to where the options go.
-
----
-## [.save](/commands/SAVE.md)
-Saves the story.
-
----
-## [.start](/commands/START.md)
-Runs the story.
-
 ---
 
-<!-- Im sure you have not gotten to it yet, but are you intending to create a "Scenes" section that explains each scene? It may also be helpful to briefly summarize each scene before their corresponding commands -->
+<style>
+td, th {
+   border: none!important;
+}
+</style>
 
-<!-- Noticed that constructor commands for scenes start with uppercase. Was this intentional? -->
+<style>
+td:nth-child(1) {
+  width: 150px;
+  }
+
+/* the second */
+td:nth-child(2) {
+  width: 500px;
+}
+
+.niceTables thg {
+background: grey;
+word-wrap: break-word;
+text-align: center;
+}
+.niceTables tr:nth-child(1) { background: #F2F2F2; }
+.niceTables tr:nth-child(2) { background: #F2F2F2; }
+.niceTables tr:nth-child(3) { background: #F2F2F2; }
+.niceTables tr:nth-child(4) { background: #F2F2F2; }
+.niceTables tr:nth-child(5) { background: #F2F2F2; }
+.niceTables tr:nth-child(6) { background: #F2F2F2; }
+</style>
+
+<div class="niceTables">
+
+|   Comments   | Makes comments in the code. |
+|------------:|:--------------------|
+| | |
+
+| .CreateSavePoint | Creates a save point scene. |
+|------------:|:--------------------|
+| .addText | Adds text the the save point or changes existing text. |
+| .link | Adds where the save point goes to next. |
+
+| .CreateTextBlock | Creates a text block scene. |
+|------------:|:--------------------|
+| .addText | Adds text to the text block or changes existing text. |
+
+| .CreateDeadEnd | Creates a dead-end scene. |
+|------------:|:--------------------|
+| .addText | Adds text to the dead-end scene or changes existing text. |
+
+| .CreateOption | Creates an option. |
+|------------:|:--------------------|
+| .link | Adds a link to where the option goes. |
+
+| .Save | Saves the story. |
+|------------:|:--------------------|
+| | |
+
+| .Start | Runs the story. |
+|------------:|:--------------------|
+| | |
+
+</div>
