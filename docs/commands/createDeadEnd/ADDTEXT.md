@@ -45,7 +45,7 @@ text-align: center;
 
 | | |
 |------------:|:--------------------|
-| \<DeadEnd\> | This is a variable that contains a Dead-end. |
+| \<DeadEnd\> | Any variable that contains a Dead-end. |
 | \<Text\> | Any string. |
 
 </div>

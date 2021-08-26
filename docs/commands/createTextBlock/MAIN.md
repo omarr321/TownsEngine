@@ -5,7 +5,7 @@
 # .CreateTextBlock
 
 **About:**
-```.CreateTextBlock``` works like [```.createScene```](/commands/createScene/MAIN.md) and is just a special type of scene that is used to have just
+```.CreateTextBlock``` works like [```.CreateScene```](/commands/createScene/MAIN.md) and is just a special type of scene that is used to have just
 text without any options. This scene can not have any options.
 
 **Usage:**
