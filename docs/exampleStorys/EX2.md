@@ -34,4 +34,4 @@ start.addOption option1
 
 **Graph:**
 
-![Example Story #2 Graph](/ex2Graph.svg)
+![Example Story #2 Graph](ex2Graph.svg)
