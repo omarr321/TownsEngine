@@ -10,6 +10,8 @@
   * [.CreateTextBlock](/commands/createTextBlock/MAIN.md)
   * [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
   * [.CreateOption](/commands/createOption/MAIN.md)
+    * [.addText](/commands/createOption/ADDTEXT.md)
     * [.link](/commands/createOption/LINK.md)
   * [.Save](/commands/SAVE.md)
   * [.Start](/commands/START.md)
+* [Example Stories](/exampleStorys/MAIN.md)
