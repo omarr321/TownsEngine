@@ -6,7 +6,10 @@
 
 **About:**
 ```.CreateDeadEnd``` works like [```.CreateScene```](/commands/createScene/MAIN.md) and is just a special type of scene that
-is used to be the end of a branch. You can not add options to it as it has a unique set of options. The options are go back one scene, go to save point, and go to the start.
+is used to be the end of a branch. You can not add options to it as it has a unique set of options. The options are the following:
+> * Go back one scene
+> * Go to save point
+> * Go to the start
 
 **Usage:**
 ```<Var> = .CreateDeadEnd```
