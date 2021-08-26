@@ -1,15 +1,14 @@
 ---
-| [**BACK TO HOME**](/README.md) | [**BACK TO COMMANDS**](/commands/COMMANDS.md) |
+| [**BACK TO HOME**](/README.md) | [**BACK TO TEXT BLOCK**](/commands/createTextBlock/MAIN.md) |
 
 ---
-# .CreateTextBlock
+# .CreateTextBlock.link
 
 **About:**
-```.CreateTextBlock``` works like [```.createScene```](/commands/createScene/MAIN.md) and is just a special type of scene that is used to have just
-text without any options. This scene can not have any options.
+```.link``` is used to add the next scene.
 
 **Usage:**
-```<Var> = .CreateTextBlock```
+```<TextBlock>.link <Scene>```
 
 **Args:**
 
@@ -46,10 +45,9 @@ text-align: center;
 
 | | |
 |------------:|:--------------------|
-| \<Var\> | Any variable |
+| \<TextBlock\> | Any variable that contains a TextBlock. |
+| \<Scene\> | Any variable that contains any type of scene. |
 
 </div>
-
-**Subcommands:** [```.addText```](/commands/createTextBlock/ADDTEXT.md)**,** [```.link```](/commands/createTextBlock/LINK.md)
 
 ---

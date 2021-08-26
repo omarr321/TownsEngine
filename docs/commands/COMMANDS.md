@@ -39,32 +39,32 @@ text-align: center;
 
 <div class="niceTables">
 
-|   Comments   | Makes comments in the code. |
+|   [Comments](/commands/COMMENTS.md)   | Makes comments in the code. |
 |------------:|:--------------------|
 | | |
 
-| .CreateSavePoint | Creates a save point scene. |
+| [.CreateSavePoint](/commands/createSavePoint/MAIN.md) | Creates a save point scene. |
 |------------:|:--------------------|
-| .addText | Adds text the the save point or changes existing text. |
-| .link | Adds where the save point goes to next. |
+| [.addText](/commands/createSavePoint/ADDTEXT.md) | Adds text the the save point or changes existing text. |
+| [.link](/commands/createSavePoint/LINK.md) | Adds where the save point goes to next. |
 
-| .CreateTextBlock | Creates a text block scene. |
+| [.CreateTextBlock](/commands/createTextBlock/MAIN.md) | Creates a text block scene. |
 |------------:|:--------------------|
-| .addText | Adds text to the text block or changes existing text. |
+| [.addText](/commands/createTextBlock/ADDTEXT.md) | Adds text to the text block or changes existing text. |
 
-| .CreateDeadEnd | Creates a dead-end scene. |
+| [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md) | Creates a dead-end scene. |
 |------------:|:--------------------|
-| .addText | Adds text to the dead-end scene or changes existing text. |
+| [.addText](/commands/createDeadEnd/ADDTEXT.md) | Adds text to the dead-end scene or changes existing text. |
 
-| .CreateOption | Creates an option. |
+| [.CreateOption](/commands/createOption/MAIN.md) | Creates an option. |
 |------------:|:--------------------|
-| .link | Adds a link to where the option goes. |
+| [.link](/commands/createOption/LINK.md) | Adds a link to where the option goes. |
 
-| .Save | Saves the story. |
+| [.Save](/commands/SAVE.md) | Saves the story. |
 |------------:|:--------------------|
 | | |
 
-| .Start | Runs the story. |
+| [.Start](/commands/START.md) | Runs the story. |
 |------------:|:--------------------|
 | | |
 

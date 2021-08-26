@@ -17,6 +17,7 @@
     * [.link](/commands/createSavePoint/LINK.md)
   * [.CreateTextBlock](/commands/createTextBlock/MAIN.md)
     * [.addText](/commands/createTextBlock/ADDTEXT.md)
+    * [.link](/commands/createTextBlock/LINK.md)
   * [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
     * [.addText](/commands/createDeadEnd/ADDTEXT.md)
   * [.CreateOption](/commands/createOption/MAIN.md)
