@@ -2,7 +2,7 @@
 
 # TownsEngine <small>Pre-Release</small>
 
-> A simple to use branching story language and interpreter.
+> A simple scripting language and interpreter to make branching stories.
 
 - Simple to use
 - Easy to understand

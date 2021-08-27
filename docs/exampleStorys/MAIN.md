@@ -9,6 +9,6 @@ We have provided a few exmple stories with the code and graph for you to really 
 
 **[Example Story #1](/exampleStorys/EX1.md):** This is a short one that demonstations normal use with a few diffrent branches.
 
-**[Example Story #2](/exampleStorys/EX2.md):** NO DATA
+**[Example Story #2](/exampleStorys/EX2.md):** This is a simple two scene story.
 
 **[Example Story #3](/exampleStorys/EX3.md):** NO DATA
