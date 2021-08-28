@@ -43,6 +43,18 @@ text-align: center;
 |------------:|:--------------------|
 | | |
 
+| [.CreateScene](/commands/createScene/MAIN.md) | Creates a basic scene. |
+|------------:|:--------------------|
+| [.addText](/commands/createScene/ADDTEXT.md) | Adds text the the scene or changes existing text. |
+| [.addOption](/commands/createScene/ADDOPTION.md) | Adds an option to the scene. |
+
+| [.CreateStart](/commands/createStart/MAIN.md) | Creates a start scene. |
+|------------:|:--------------------|
+| [.addTitle](/commands/createStart/ADDTITLE.md) | Adds a title to the start scene. |
+| [.addDesc](/commands/createStart/ADDDESC.md) | Adds a description to the start scene. |
+| [.addText](/commands/createStart/ADDTEXT.md) | Adds text to the start scene or changes existing text. |
+| [.addOption](/commands/createStart/ADDOPTION.md) | Adds an option to the start scene. |
+
 | [.CreateSavePoint](/commands/createSavePoint/MAIN.md) | Creates a save point scene. |
 |------------:|:--------------------|
 | [.addText](/commands/createSavePoint/ADDTEXT.md) | Adds text the the save point or changes existing text. |
@@ -51,6 +63,7 @@ text-align: center;
 | [.CreateTextBlock](/commands/createTextBlock/MAIN.md) | Creates a text block scene. |
 |------------:|:--------------------|
 | [.addText](/commands/createTextBlock/ADDTEXT.md) | Adds text to the text block or changes existing text. |
+| [.link](/commands/createTextBlock/LINK.md) | Adds where the text block goes to next. |
 
 | [.CreateDeadEnd](/commands/createDeadEnd/MAIN.md) | Creates a dead-end scene. |
 |------------:|:--------------------|
@@ -58,6 +71,7 @@ text-align: center;
 
 | [.CreateOption](/commands/createOption/MAIN.md) | Creates an option. |
 |------------:|:--------------------|
+| [.addText](/commands/createoption/ADDTEXT.md) | Adds text to the option or changes existing text. |
 | [.link](/commands/createOption/LINK.md) | Adds a link to where the option goes. |
 
 | [.Save](/commands/SAVE.md) | Saves the story. |
