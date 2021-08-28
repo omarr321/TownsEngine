@@ -5,70 +5,33 @@
 
 # Example Story #1
 
-**About:** This short story is about you waking up in your bed.
+**About:** This is a very short story with only two scenes.
 
 **Code:**
 ```
-> Creates the start scene and sets it up
-start = .CreateStartScene
+> Creates a start scene.
+start = .CreateStart
+> Sets up the start scene with a title, description, and text.
 start.addTitle "Example Story #1"
-start.addDesc "This is the first example story"
+start.addDesc "This is an example story that has two scenes in it"
 start.addText "You wake up in your bed"
 
-> Creating the options for the start scene
-start_o1 = .CreateOption
-start_o1.setText "Get up"
-start_o2 = .CreateOption
-start_o2.setText "Go back to sleep"
-start_o3 = .CreateOption
-start_o3.setText "Look out the window"
+> Creates a dead-end scene.
+end = .CreateDeadEnd
+> Sets up the dead-end scene
+end.addText "You go back to sleep"
 
-> Adding the options to the start scene
-start.addOption start_o1
-start.addOption start_o2
-start.addOption start_o3
+> Creates a new option that is "Go back to sleep".
+option1 = .CreateOption "Go back to sleep"
+> Links the option to the dead-end scene.
+option1.link end
+> Adds the option to the start scene.
+start.addOption option1
 
-> Creating the scenes that link to the start scene
-startSleep = .CreateDeadEnd
-startWindow = .CreateScene
-startGetUp = .CreateDeadEnd
-
-> Linking the scenes to the start scene
-start_o1.link startGetUp
-start_o2.link startSleep
-start_o3.link startWindow
-
-> Setting up the "Get up" scene from the start scene
-startGetUp.addText "You get up and go thought your day"
-
-> Setting up the "Go back to sleep" scene from the start scene
-startSleep.addText "You go back to sleep"
-
-> Setting up the "Look out the window" scene from the start scene
-startWindow.addText "You see a bird"
-
-> Creating options for the window scene
-window_o1 = .CreateOption
-window_o1.addText "Put your hand out"
-window_o2 = .CreateOption
-window_o2.addText "Go back to sleep"
-
-> Adding the options to the window scene
-startWindow.addOption window_o1
-startWindow.addOption window_o2
-
-> Creating the scenes needed for the window scene
-windowHandOut = .CreateDeadEnd
-windowHandOut.addText "You put yuor hand out but the bird flys away"
-
-> Linking the scenes
-window_o1.link windowHandOut
-window_o2.link startSleep
-
-> Starts the story
-.Start
+> Runs the story.
+.start
 ```
 
 **Graph:**
 
-![Example Story #1 Graph](/ex1Graph.svg)
+![Example Story #1 Graph](ex1Graph.svg)
