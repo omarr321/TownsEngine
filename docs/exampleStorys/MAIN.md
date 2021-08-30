@@ -11,4 +11,4 @@ We have provided a few exmple stories with the code and graph for you to really 
 
 **[Example Story #2](/exampleStorys/EX2.md):** This is a simple two scene story.
 
-**[Example Story #3](/exampleStorys/EX3.md):** NO DATA
+**[Example Story #3](/exampleStorys/EX3.md):** This is a story with greater complexity. Utilizes many of the engine's available objects and commands.
