@@ -17,11 +17,11 @@ start.addText "You wake up in your bed"
 
 > Creating the options for the start scene
 start_o1 = .CreateOption
-start_o1.setText "Get up"
+start_o1.addText "Get up"
 start_o2 = .CreateOption
-start_o2.setText "Go back to sleep"
+start_o2.addText "Go back to sleep"
 start_o3 = .CreateOption
-start_o3.setText "Look out the window"
+start_o3.addText "Look out the window"
 
 > Adding the options to the start scene
 start.addOption start_o1
