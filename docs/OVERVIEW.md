@@ -27,7 +27,6 @@ The syntax of this language is simple to implement. A **command** is a line of t
 
 > Example of good commands:
 > * .start
-> * .save
 > * var1 = .createScene
 > * var1.addText "This is the text to add."
 

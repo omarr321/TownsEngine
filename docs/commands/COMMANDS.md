@@ -74,10 +74,6 @@ text-align: center;
 | [.addText](/commands/createoption/ADDTEXT.md) | Adds text to the option or changes existing text. |
 | [.link](/commands/createOption/LINK.md) | Adds a link to where the option goes. |
 
-| [.Save](/commands/SAVE.md) | Saves the story. |
-|------------:|:--------------------|
-| | |
-
 | [.Start](/commands/START.md) | Runs the story. |
 |------------:|:--------------------|
 | | |
