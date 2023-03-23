@@ -21,7 +21,7 @@ public class scene {
 			return;
 		}
 		options[this.optionIndex] = option;
-		this.optionIndex = this.optionIndex++;
+		this.optionIndex++;
 	}
 	
 	public boolean noOptions() {
@@ -32,14 +32,19 @@ public class scene {
 		return this.options[index];
 	}
 	
+	public int getNumOfOption() {
+		
+		return this.optionIndex;
+	}
+	
 	@Override
 	public String toString() {
 		String temp = this.text;
 		if (this.noOptions()) {
-			temp = temp + "\nPress enter to continue...";
+			temp = temp + "\nNo Options!";
 		} else {
 			for (int i = 0; i < optionIndex; i++) {
-				temp = temp + "\n" + i + " | " + this.options[i].toString();
+				temp = temp + "\n" + (i+1) + " | " + this.options[i].toString();
 			}
 		}
 		
