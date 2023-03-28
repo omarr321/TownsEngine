@@ -24,8 +24,8 @@ public class player {
 	
 	public void play() {
 		if (this.currScene != null) {
-			System.out.print(this.currScene.toString());
-			int optionNum = this.currScene.getNumOfOption();
+			toolbox.printChar(this.currScene.toString(), 10);
+			int optionNum = this.currScene.getNumOfOptions();
 			
 			while(true) {
 				System.out.print("\n>>>");

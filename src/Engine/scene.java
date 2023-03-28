@@ -32,14 +32,14 @@ public class scene {
 		return this.options[index];
 	}
 	
-	public int getNumOfOption() {
+	public int getNumOfOptions() {
 		
 		return this.optionIndex;
 	}
 	
 	@Override
 	public String toString() {
-		String temp = this.text;
+		String temp = toolbox.breakStringUp(this.text);
 		if (this.noOptions()) {
 			temp = temp + "\nNo Options!";
 		} else {
