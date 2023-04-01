@@ -8,6 +8,8 @@ public class scene {
 	private option[] options = new option[10];
 	private int optionIndex = 0;
 	
+	public scene() {}
+	
 	public scene(String text) {
 		this.text = text;
 	}
@@ -50,4 +52,6 @@ public class scene {
 		
 		return temp;
 	}
+	
+	public void compileScene() {}
 }

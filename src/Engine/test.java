@@ -1,7 +1,4 @@
 package Engine;
-//import Engine.scene;
-//import Engine.option;
-//import Engine.player;
 
 public class test {
 
@@ -25,10 +22,16 @@ public class test {
 		scene scene3_1 = new scene("According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.");
 		scene2_1_1.setScene(scene3_1);
 		
+		textBlock textBlock1 = new textBlock("This is a text block. There is only one option.", scene1);
+		
+		option scene3_2 = new option("This next scene is a textblock", textBlock1);
+		scene3_1.addOption(scene3_2);
+		
 		player user = new player("Billy", startScene);
 		
 		startScene.addStartScene(scene1);
 		startScene.compileScene();
+		textBlock1.compileScene();
 		user.play();
 	}
 }

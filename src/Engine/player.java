@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class player {
 	private String name;
+	private scene lastScene = null;
 	private scene currScene = null;
+	private scene saveScene = null;
 	private Scanner userIn;
 	
 	public player (String name) {
@@ -19,7 +21,20 @@ public class player {
 	}
 	
 	public void setScene(scene scene) {
+		this.lastScene = this.currScene;
 		this.currScene = scene;
+	}
+	
+	public void setSave(scene saveScene) {
+		this.saveScene = saveScene;
+	}
+	
+	public scene getSaveScene() {
+		return this.saveScene;
+	}
+	
+	public scene getLastScene() {
+		return this.lastScene;
 	}
 	
 	public void play() {
