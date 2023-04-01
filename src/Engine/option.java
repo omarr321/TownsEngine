@@ -8,7 +8,7 @@ public class option {
 	public option(String text) {
 		this(text, null);
 	}
-	public option(String text, scene scene) {
+	public <T extends scene> option(String text, T scene) {
 		this.optionText = text;
 		this.nextScene = scene;
 	}
@@ -16,7 +16,7 @@ public class option {
 	public void setText(String text) {
 		this.optionText = text;
 	}
-	public void setScene(scene scene) {
+	public <T extends scene> void setScene(T scene) {
 		this.nextScene = scene;
 	}
 	

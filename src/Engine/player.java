@@ -30,18 +30,22 @@ public class player {
 			while(true) {
 				System.out.print("\n>>>");
 				String currInString = this.userIn.nextLine();
+				if (currInString.equals("quit") || currInString.equals("Quit")) {
+					return;
+				}
 				try {
 					int currIn = Integer.parseInt(currInString);
 					if (currIn < 1 || currIn > optionNum) {
 						System.out.print("Error: Input is a vaild option!");
 					} else {
 						this.setScene(this.currScene.getOption(currIn-1).getScene());
-						this.play();
+						break;
 					}
 				} catch (NumberFormatException ex) {
 					System.out.print("Error: Input is not a number!");
 				}
 			}
+			this.play();
 		}
 	}
 }

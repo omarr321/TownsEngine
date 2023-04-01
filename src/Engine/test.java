@@ -1,11 +1,13 @@
 package Engine;
-import Engine.scene;
-import Engine.option;
-import Engine.player;
+//import Engine.scene;
+//import Engine.option;
+//import Engine.player;
 
 public class test {
 
 	public static void main(String[] args) {
+		titleScene startScene = new titleScene("Test Story", "A story to test this engine", "Omar R.");
+		
 		scene scene1 = new scene("This is the start of a test story!");
 		option scene1_1 = new option("Let's Go!!!!!");
 		option scene1_2 = new option("No, this is the worst!");
@@ -23,8 +25,10 @@ public class test {
 		scene scene3_1 = new scene("According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.");
 		scene2_1_1.setScene(scene3_1);
 		
-		player user = new player("Billy", scene1);
+		player user = new player("Billy", startScene);
+		
+		startScene.addStartScene(scene1);
+		startScene.compileScene();
 		user.play();
 	}
-
 }
