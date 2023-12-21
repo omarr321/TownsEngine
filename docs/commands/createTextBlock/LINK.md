@@ -8,7 +8,7 @@
 ```.link``` is used to add the next scene.
 
 **Usage:**
-```<TextBlock>.link <Scene>```
+```.<TextBlock>.link <Scene>```
 
 **Args:**
 

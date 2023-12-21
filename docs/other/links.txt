@@ -22,8 +22,6 @@
     * [.addText](/commands/createDeadEnd/ADDTEXT.md)
   * [.CreateOption](/commands/createOption/MAIN.md)
     * [.link](/commands/createOption/LINK.md)
-  * [.Save](/commands/SAVE.md)
-  * [.Start](/commands/START.md)
 * [Example Stories](/exampleStorys/MAIN.md)
   * [Example #1](/exampleStorys/EX1.md)
   * [Example #2](/exampleStorys/EX2.md)

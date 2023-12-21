@@ -10,7 +10,7 @@ that is used to be the start of the story. There can only be one if these scenes
 it also contains the story menu with the title and desciption.
 
 **Usage:**
-```<Var> = .CreateStart```
+```/<Var> = .CreateStart```
 
 **Args:**
 

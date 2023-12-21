@@ -8,7 +8,7 @@
 ```.addNextScene``` is used to add the start scene of the story.
 
 **Usage:**
-```<StartScene>.addNextScene <Scene>```
+```.<StartScene>.addNextScene <Scene>```
 
 **Args:**
 

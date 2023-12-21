@@ -26,14 +26,13 @@ The syntax of this language is simple to implement. A **command** is a line of t
 > * Var\+#$4
 
 > Example of good commands:
-> * .start
-> * var1 = .createScene
-> * var1.addText "This is the text to add."
+> * /var1 = .createScene
+> * /var1.addText "This is the text to add."
 
 > Example of bad commands:
-> * start
-> * var1.addText"This is the text to add."
-> * var1.addText This is the text to add.
+> * /var1.addText"This is the text to add."
+> * /var1.addText This is the text to add.
+> * var1.addText "This is the text to add."
 
 #### 2. Command Usage
 The language is designed to work with branching stories. This section is an overview of the programming environment and a guide for implementing commands.

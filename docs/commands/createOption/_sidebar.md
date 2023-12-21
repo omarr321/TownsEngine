@@ -12,5 +12,4 @@
   * [⮟ .CreateOption](/commands/createOption/MAIN.md)
     * [.addText](/commands/createOption/ADDTEXT.md)
     * [.link](/commands/createOption/LINK.md)
-  * [.Start](/commands/START.md)
 * [⮞ Example Stories](/exampleStorys/MAIN.md)

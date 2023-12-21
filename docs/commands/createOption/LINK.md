@@ -9,7 +9,7 @@
 to add the scene that the option will move to when the player chooses that option.
 
 **Usage:**
-```<Option>.link <Scene>```
+```.<Option>.link <Scene>```
 
 **Args:**
 

@@ -10,6 +10,8 @@ Single line comments are denoted by the ```>``` symbol. Any line that starts wit
 > `> This is a comment!`
 > 
 > `> This one is as well!`
+> 
+> `>This one is as well!`
 
 > Examples of bad comments:
 > 
@@ -31,11 +33,10 @@ Multi-line comments are denoted by ```>>``` and end with ```<<```. All content b
 > 
 > `<<`
 
-> Examples of bad comments:
 > 
-> `>>This is not right.`
+> `>>This is ok right.`
 > 
-> `This will not work becuase the`
+> `This will work becuase the`
 > 
-> `arrows are not on seperate lines<<`
+> `arrows can be on the same lines<<`
 ---

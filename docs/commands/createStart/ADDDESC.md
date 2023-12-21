@@ -8,7 +8,7 @@
 ```.addDesc``` is used to add the descption of the story.
 
 **Usage:**
-```<StartScene>.addDesc <Desc>```
+```.<StartScene>.addDesc <Desc>```
 
 **Args:**
 

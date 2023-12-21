@@ -8,7 +8,7 @@
 ```.addText``` is used to add the text that will be display.
 
 **Usage:**
-```<Scene>.addText <Text>```
+```.<Scene>.addText <Text>```
 
 **Args:**
 

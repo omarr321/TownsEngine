@@ -13,5 +13,4 @@
   * [⮞ .CreateTextBlock](/commands/createTextBlock/MAIN.md)
   * [⮞ .CreateDeadEnd](/commands/createDeadEnd/MAIN.md)
   * [⮞ .CreateOption](/commands/createOption/MAIN.md)
-  * [.Start](/commands/START.md)
 * [⮞ Example Stories](/exampleStorys/MAIN.md)
