@@ -6,8 +6,9 @@ import java.util.Scanner;
 public class player {
 	private String name;
 	private scene lastScene = null;
-	private scene currScene = null;
+	private scene currScene;
 	private scene saveScene = null;
+	private scene startScene = null;
 	private Scanner userIn;
 	
 	public player (String name) {
@@ -17,6 +18,7 @@ public class player {
 	public player (String name, scene scene) {
 		this.name = name;
 		this.currScene = scene;
+		this.startScene = scene;
 		userIn = new Scanner(System.in);
 	}
 	
@@ -24,11 +26,7 @@ public class player {
 		this.lastScene = this.currScene;
 		this.currScene = scene;
 	}
-	
-	public void setSave(scene saveScene) {
-		this.saveScene = saveScene;
-	}
-	
+
 	public scene getSaveScene() {
 		return this.saveScene;
 	}
@@ -36,9 +34,14 @@ public class player {
 	public scene getLastScene() {
 		return this.lastScene;
 	}
-	
+
+	public scene getStartScene() {
+		return this.startScene;
+	}
+
 	public void play() {
 		if (this.currScene != null) {
+			this.currScene.compileScene(this);
 			toolbox.printChar(this.currScene.toString(), 10);
 			int optionNum = this.currScene.getNumOfOptions();
 			
@@ -54,6 +57,11 @@ public class player {
 						System.out.print("Error: Input is a vaild option!");
 					} else {
 						this.setScene(this.currScene.getOption(currIn-1).getScene());
+						if (this.lastScene instanceof savePoint) {
+							if (this.lastScene.getOption(currIn-1).getText().equals("Save the game")) {
+								this.saveScene = this.currScene;
+							}
+						}
 						break;
 					}
 				} catch (NumberFormatException ex) {

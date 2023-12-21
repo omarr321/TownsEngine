@@ -16,6 +16,9 @@ public class option {
 	public void setText(String text) {
 		this.optionText = text;
 	}
+	public String getText() {
+		return this.optionText;
+	}
 	public <T extends scene> void setScene(T scene) {
 		this.nextScene = scene;
 	}

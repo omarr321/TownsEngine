@@ -17,6 +17,10 @@ public class scene {
 	public void setText(String text) {
 		this.text = text;
 	}
+
+	public String getText() {
+		return this.text;
+	}
 	
 	public void addOption(option option) {
 		if (this.optionIndex == 10) {
@@ -38,6 +42,11 @@ public class scene {
 		
 		return this.optionIndex;
 	}
+
+	protected void deleteAllOptions() {
+		this.options = new option[10];
+		this.optionIndex = 0;
+	}
 	
 	@Override
 	public String toString() {
@@ -53,5 +62,5 @@ public class scene {
 		return temp;
 	}
 	
-	public void compileScene() {}
+	public void compileScene(player player) {}
 }
