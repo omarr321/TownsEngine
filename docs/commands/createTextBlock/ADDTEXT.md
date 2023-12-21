@@ -8,7 +8,7 @@
 ```.addText``` is used to add the text that will be display.
 
 **Usage:**
-```<TextBlock>.addText <Text>```
+```.<TextBlock>.addText <Text>```
 
 **Args:**
 

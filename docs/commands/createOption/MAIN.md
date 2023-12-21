@@ -9,7 +9,7 @@
 The option needs to be linked to another scene.
 
 **Usage:**
-```<Var> = .CreateOption```
+```.<Var> = .CreateOption```
 
 **Args:**
 

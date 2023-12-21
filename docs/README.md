@@ -39,7 +39,6 @@ designed to be simple to use and easy to understand.
   * [.CreateOption](/commands/createOption/MAIN.md)
     * [.addText](/commands/createOption/ADDTEXT.md)
     * [.link](/commands/createOption/LINK.md)
-  * [.Start](/commands/START.md)
 * [Example Stories](/exampleStorys/MAIN.md)
   * [Example #1](/exampleStorys/EX1.md)
   * [Example #2](/exampleStorys/EX2.md)
