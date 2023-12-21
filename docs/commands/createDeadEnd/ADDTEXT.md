@@ -8,7 +8,7 @@
 ```.addText``` is used to adds the text that is displayed when the player reachs the dead end.
 
 **Usage:**
-```.<DeadEnd>.addText <Text>```
+```<DeadEnd>.addText <Text>```
 
 **Args:**
 

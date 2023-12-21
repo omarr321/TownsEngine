@@ -8,7 +8,7 @@
 ```.addOption``` is used to add an option to the scene as one of the chooses a player can choose.
 
 **Usage:**
-```.<Scene>.addOption <Option>```
+```<Scene>.addOption <Option>```
 
 **Args:**
 

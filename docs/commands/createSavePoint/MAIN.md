@@ -9,7 +9,7 @@
 special type of scene that is used to save the players progress. The scene can not have any options.
 
 **Usage:**
-```/<Var> = .CreateSavePoint```
+```<Var> = .CreateSavePoint```
 
 **Args:**
 

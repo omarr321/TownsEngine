@@ -12,7 +12,7 @@ is used to be the end of a branch. You can not add options to it as it has a uni
 > * Go to the start
 
 **Usage:**
-```/<Var> = .CreateDeadEnd```
+```<Var> = .CreateDeadEnd```
 
 **Args:**
 

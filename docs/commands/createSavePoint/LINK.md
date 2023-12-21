@@ -8,7 +8,7 @@
 ```.link``` is used to add the next scene.
 
 **Usage:**
-```.<SavePoint>.link <Scene>```
+```<SavePoint>.link <Scene>```
 
 **Args:**
 

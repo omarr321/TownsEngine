@@ -8,7 +8,7 @@
 ```.CreateScene``` is used to create an empty scene. You can options to to the scene.
 
 **Usage:**
-```/<Var> = .CreateScene```
+```<Var> = .CreateScene```
 
 **Args:**
 
