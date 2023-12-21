@@ -22,7 +22,7 @@ public class savePoint extends scene{
 
 	@Override
 	public void compileScene(player player) {
-		//Removes all options and saves the original text so if you come back to this, it does not dup options or text
+		// Removes all options and saves the original text so if you come back to this, it does not dup options or text
 		if (this.oldText == null) {
 			this.oldText = this.getText();
 		}
