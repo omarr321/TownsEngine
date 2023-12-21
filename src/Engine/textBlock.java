@@ -11,7 +11,7 @@ public class textBlock extends scene{
 	
 	public <T extends scene> textBlock(String text, T scene) {
 		super(text);
-		this.nextScene = scene;
+		this.setNextScene(scene);
 	}
 	
 	public <T extends scene> void setNextScene(T scene) {
@@ -19,8 +19,8 @@ public class textBlock extends scene{
 	}
 	
 	@Override
-	public void compileScene() {
-		
+	public void compileScene(player player) {
+		this.deleteAllOptions();
 		option nextScene = new option("Press 1 to continue", this.nextScene);
 		
 		this.addOption(nextScene);

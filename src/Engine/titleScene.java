@@ -36,19 +36,21 @@ public class titleScene extends scene{
 		this.text = text;
 	}
 	
-	public <T extends scene> void addStartScene(T startScene) {
+	public <T extends scene> void addStartScene(T startScene, player player) {
 		this.nextScene = startScene;
 	}
 	
 	@Override
-	public void compileScene() {
+	public void compileScene(player player) {
+		this.deleteAllOptions();
+
 		super.setText(this.title + "\n\n" + this.text);
 		
 		option back = new option("Back", this);
 		
 		scene creditScene = new scene("Story made by " + this.credit);
 		creditScene.addOption(back);
-		scene helpScene = new scene("TownsEngine is simple you use. Use the numbers on your keyboard to select options in the story.");
+		scene helpScene = new scene("TownsEngine is simple you use. Use the numbers on your keyboard to select options in the story.\nType \"quit\" anytime to quit the story");
 		helpScene.addOption(back);
 		
 		option play = new option("Play", this.nextScene);

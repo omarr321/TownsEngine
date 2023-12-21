@@ -25,7 +25,7 @@ public class test {
 		savePoint scene2_save = new savePoint("You take the insult like a champ!");
 		scene2_2O1.setScene(scene2_save);
 
-		scene scene_end_thing_1 = new scene("Time to go dumbass...");
+		scene scene_end_thing_1 = new deadend("Time to go dumbass...");
 		scene2_save.setNextScene(scene_end_thing_1);
 
 		scene scene3_1 = new scene("According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.");
@@ -38,7 +38,7 @@ public class test {
 		
 		player user = new player("Billy", startScene);
 		
-		startScene.addStartScene(scene1);
+		startScene.addStartScene(scene1, user);
 		user.play();
 	}
 }
