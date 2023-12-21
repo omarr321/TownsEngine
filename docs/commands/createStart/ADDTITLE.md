@@ -8,7 +8,7 @@
 ```.addTitle``` is used to add the title of the story.
 
 **Usage:**
-```.<StartScene>.addTitle <Title>```
+```<StartScene>.addTitle <Title>```
 
 **Args:**
 

@@ -8,7 +8,7 @@
 ```.addText``` is used to add the text that will be display.
 
 **Usage:**
-```.<Option>.addText <Text>```
+```<Option>.addText <Text>```
 
 **Args:**
 

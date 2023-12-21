@@ -9,7 +9,7 @@
 text without any options. This scene can not have any options.
 
 **Usage:**
-```/<Var> = .CreateTextBlock```
+```<Var> = .CreateTextBlock```
 
 **Args:**
 

@@ -1,5 +1,14 @@
-package Engine;
+package Engine.scenes;
 
+import Engine.other.option;
+import Engine.other.player;
+
+/**
+ * This class is a child of scene. This is designed for the big block of text with no options. See the scene class for what this class is for
+ *
+ * @author Omar M. Radwan
+ * @version 1.0.0
+ */
 public class deadend extends scene{
 
     public deadend() {
@@ -10,6 +19,10 @@ public class deadend extends scene{
         super(text);
     }
 
+    /**
+     * This compiles the scene so that it displays and links properly. This happens when the scene runs
+     * @param player - The player
+     */
     @Override
     public void compileScene(player player) {
         this.deleteAllOptions();
