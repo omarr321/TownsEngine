@@ -39,6 +39,7 @@ public class player {
 	
 	public void play() {
 		if (this.currScene != null) {
+			this.currScene.compileScene();
 			toolbox.printChar(this.currScene.toString(), 10);
 			int optionNum = this.currScene.getNumOfOptions();
 			
@@ -54,6 +55,11 @@ public class player {
 						System.out.print("Error: Input is a vaild option!");
 					} else {
 						this.setScene(this.currScene.getOption(currIn-1).getScene());
+						if (this.lastScene instanceof savePoint) {
+							if (this.lastScene.getOption(currIn-1).getText().equals("Save the game")) {
+								this.saveScene = this.currScene;
+							}
+						}
 						break;
 					}
 				} catch (NumberFormatException ex) {

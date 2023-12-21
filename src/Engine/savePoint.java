@@ -1,19 +1,30 @@
 package Engine;
 
 public class savePoint extends scene{
-	private player player;
-	
-	public savePoint(player player) {
-		this(player, null);
+	private scene nextScene;
+
+	public savePoint() {
+		this(null, null);
 	}
-	
-	public savePoint(player player, String text) {
+
+	public savePoint(String text) {
+		this(text, null);
+	}
+	public <T extends scene> savePoint(String text, T scene) {
 		super(text);
-		this.player = player;
+		this.nextScene = scene;
 	}
-	
-	@Override
+
+	public <T extends scene> void setNextScene(T scene) {
+		this.nextScene = scene;
+	}
+
 	public void compileScene() {
-		
+		option saveO = new option("Save the game");
+		saveO.setScene(nextScene);
+		option noSaveO = new option("Continue without saving");
+		saveO.setScene(nextScene);
+		this.addOption(saveO);
+		this.addOption(noSaveO);
 	}
 }
