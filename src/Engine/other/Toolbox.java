@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class toolbox {
+public class Toolbox {
 
 	/**
 	 * This uses {@link #breakStringUp(String, int) breakStringUp} method with a length of 100
@@ -15,7 +15,7 @@ public class toolbox {
 	 * @return - A new string with newlines that splits the string up
 	 */
 	public static String breakStringUp(String string) {
-		return toolbox.breakStringUp(string, 100);
+		return Toolbox.breakStringUp(string, 100);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class toolbox {
 	 * @param string - The string to print
 	 */
 	public static void printLine(String string) {
-		toolbox.printLine(string, 50);
+		Toolbox.printLine(string, 50);
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class toolbox {
 		String[] stringArr = string.split("\n");
 		for(String currLine : stringArr) {
 			System.out.print(currLine);
-			toolbox.sleep(interval);
+			Toolbox.sleep(interval);
 		}
 	}
 
@@ -80,7 +80,7 @@ public class toolbox {
 	 * @param string - The string to print
 	 */
 	public static void printChar(String string) {
-		toolbox.printChar(string, 50);
+		Toolbox.printChar(string, 50);
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class toolbox {
 		char[] charArr = string.toCharArray();
 		for(char currChar : charArr) {
 			System.out.print(currChar);
-			toolbox.sleep(interval);
+			Toolbox.sleep(interval);
 		}
 	}
 

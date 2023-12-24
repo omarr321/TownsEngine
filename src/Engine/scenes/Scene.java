@@ -1,28 +1,28 @@
 package Engine.scenes;
-import Engine.other.option;
-import Engine.other.player;
-import Engine.other.toolbox;
+import Engine.other.Option;
+import Engine.other.Player;
+import Engine.other.Toolbox;
 
 /**
- * This is the basic scene class. This has text and options in no special formatting. The root for all scene objects and has a lot of the basic methods.
+ * This is the basic Scene class. This has text and options in no special formatting. The root for all Scene objects and has a lot of the basic methods.
  *
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class scene {
+public class Scene {
 
 	private String text;
-	private option[] options = new option[10];
+	private Option[] options = new Option[10];
 	private int optionIndex = 0;
 	
-	public scene() {}
+	public Scene() {}
 	
-	public scene(String text) {
+	public Scene(String text) {
 		this.text = text;
 	}
 
 	/**
-	 * Sets the text of the scene
+	 * Sets the text of the Scene
 	 * @param text - The text
 	 */
 	public void setText(String text) {
@@ -30,18 +30,18 @@ public class scene {
 	}
 
 	/**
-	 * Gets the scene text
-	 * @return - The scene text
+	 * Gets the Scene text
+	 * @return - The Scene text
 	 */
 	public String getText() {
 		return this.text;
 	}
 
 	/**
-	 * Adds an option to the scene and increments the index by 1
-	 * @param option - The option to add
+	 * Adds an Option to the Scene and increments the index by 1
+	 * @param option - The Option to add
 	 */
-	public void addOption(option option) {
+	public void addOption(Option option) {
 		if (this.optionIndex == 10) {
 			return;
 		}
@@ -50,7 +50,7 @@ public class scene {
 	}
 
 	/**
-	 * Check if the scene has any options.
+	 * Check if the Scene has any options.
 	 * @return - True if it has no options, false if otherwise
 	 */
 	public boolean noOptions() {
@@ -58,11 +58,11 @@ public class scene {
 	}
 
 	/**
-	 * Gets the option at the index provided
-	 * @param index - The index of the option
+	 * Gets the Option at the index provided
+	 * @param index - The index of the Option
 	 * @return - The Option found
 	 */
-	public option getOption(int index) {
+	public Option getOption(int index) {
 		return this.options[index];
 	}
 
@@ -76,20 +76,20 @@ public class scene {
 	}
 
 	/**
-	 * Wipes all options from the scene and resets the index to zero
+	 * Wipes all options from the Scene and resets the index to zero
 	 */
 	protected void deleteAllOptions() {
-		this.options = new option[10];
+		this.options = new Option[10];
 		this.optionIndex = 0;
 	}
 
 	/**
-	 * converts the scene to a nicely formatted string
-	 * @return - The scene in string form
+	 * converts the Scene to a nicely formatted string
+	 * @return - The Scene in string form
 	 */
 	@Override
 	public String toString() {
-		String temp = toolbox.breakStringUp(this.text);
+		String temp = Toolbox.breakStringUp(this.text);
 		if (this.noOptions()) {
 			temp = temp + "\nNo Options!";
 		} else {
@@ -102,8 +102,8 @@ public class scene {
 	}
 
 	/**
-	 * This compiles the scene so that it displays and links properly. This happens when the scene runs.
+	 * This compiles the Scene so that it displays and links properly. This happens when the Scene runs.
 	 * @param player
 	 */
-	public void compileScene(player player) {}
+	public void compileScene(Player player) {}
 }
