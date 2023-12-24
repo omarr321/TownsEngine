@@ -31,24 +31,79 @@ public class Complier {
         this.filePath = filePath;
     }
 
-    public void Compile() throws NoFileSet, IOException {
+    public void compile() throws NoFileSet, IOException {
         if (this.filePath.equals("")) {
             throw new NoFileSet("Error: There is no file set for the compiler to compile");
         }
 
         BufferedReader reader = new BufferedReader(new FileReader(this.filePath));
 
+        int currLine = 0;
+        boolean multilineComment = false;
         while(true) {
+            currLine++;
             String line = reader.readLine();
             if (line == null) {
                 break;
             }
 
-            //TODO: See if it comment, see if it a command, or a mutiline comment
+            if (!(line.equals(""))) {
+                if (!(multilineComment)) {
+                    if (line.toCharArray()[0] == '>') {
+                        if (line.toCharArray()[1] == '>') {
+                            multilineComment = true;
+                        }
+                    } else {
+                        String[] currCommand = this.convertCommand(line);
+                        for (String command : currCommand) {
+                            System.out.print(command + ", ");
+                        }
+                        System.out.print("\n");
+                    }
+                } else {
+                    if (line.substring(line.length()-2, line.length()).equals("<<")){
+                        multilineComment = false;
+                    }
+                }
+            }
         }
     }
 
-    public void ConvertCommand(String command) {
+    public String[] convertCommand(String command) {
+        char[] currCommand = command.toCharArray();
+        String variableName = "";
+        String commandName = "";
+        String commandArgs = "";
+        String newVar = "0";
+        int stepCount = 0;
+        for (int i = 0; i < currCommand.length; i++) {
+            if (stepCount == 0) {
+                Character.compare(currCommand[i], ' ');
+                //This steps gets the variable name
+                if (Character.compare(currCommand[i], ' ') == 0 || Character.compare(currCommand[i], '.') == 0) {
+                    stepCount++;
+                } else {
+                    variableName = variableName + currCommand[i];
+                }
+            } else if (stepCount == 1) {
+                if (currCommand[i] == '=') {
+                    i += 2;
+                    newVar = "1";
+                } else {
+                    commandName = commandName + currCommand[i];
+                }
+                stepCount = 2;
+            } else if (stepCount == 2) {
+                if (currCommand[i] != ' ') {
+                    commandName = commandName + currCommand[i];
+                } else {
+                    stepCount = 3;
+                }
+            } else if (stepCount == 3) {
+                commandArgs = commandArgs + currCommand[i];
+            }
+        }
 
+        return new String[]{newVar, variableName, commandName, commandArgs};
     }
 }

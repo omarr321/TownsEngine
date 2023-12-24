@@ -1,12 +1,17 @@
 package Engine;
 
+import Complier.Errors.NoFileSet;
 import Engine.other.Option;
 import Engine.other.Player;
 import Engine.scenes.*;
+import Complier.*;
+
+import java.io.IOException;
 
 public class test {
 
 	public static void main(String[] args) {
+		/*
 		TitleScene startScene = new TitleScene("Test Story", "A story to test this engine", "Omar R.");
 		
 		Scene scene1 = new Scene("This is the start of a test story!");
@@ -42,5 +47,16 @@ public class test {
 		
 		startScene.addStartScene(scene1, user);
 		user.play();
+		 */
+
+		Complier test = new Complier();
+		test.setFilePath("F:\\IdeaProjects\\TownsEngine\\src\\test.txt");
+		try {
+			test.compile();
+		} catch (NoFileSet e) {
+			throw new RuntimeException(e);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }
