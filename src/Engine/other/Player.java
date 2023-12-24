@@ -80,7 +80,7 @@ public class Player {
 				try {
 					int currIn = Integer.parseInt(currInString);
 					if (currIn < 1 || currIn > optionNum) {
-						System.out.print("Error: Input is a vaild Option!");
+						System.out.print("Error: Input is not a valid Option!");
 					} else {
 						this.setScene(this.currScene.getOption(currIn-1).getScene());
 						if (this.lastScene instanceof SavePoint) {

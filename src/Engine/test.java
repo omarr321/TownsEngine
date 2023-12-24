@@ -1,13 +1,12 @@
 package Engine;
 
-import Complier.Errors.TestError;
 import Engine.other.Option;
 import Engine.other.Player;
 import Engine.scenes.*;
 
 public class test {
 
-	public static void main(String[] args) throws TestError {
+	public static void main(String[] args) {
 		TitleScene startScene = new TitleScene("Test Story", "A story to test this engine", "Omar R.");
 		
 		Scene scene1 = new Scene("This is the start of a test story!");
