@@ -62,6 +62,11 @@ public class Player {
 		return this.startScene;
 	}
 
+	public<T extends Scene> void setStartScene(T scene) {
+		this.currScene = scene;
+		this.startScene = scene;
+	}
+
 	/**
 	 * The main loop of the engine. This prints the Scene and options and wait for the user to choose an Option and moves to the appropriate Scene
 	 */

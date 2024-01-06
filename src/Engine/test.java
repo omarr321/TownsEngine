@@ -1,7 +1,9 @@
 package Engine;
 
 import Complier.Compiler;
+import Complier.Errors.InvaildCommand;
 import Complier.Errors.NoFileSet;
+import Complier.Errors.UnknownVariable;
 
 import java.io.IOException;
 
@@ -51,9 +53,13 @@ public class test {
 		try {
 			test.compile();
 		} catch (NoFileSet e) {
-			throw new RuntimeException(e);
+			System.out.println(e.getMessage());
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			System.out.println(e.getMessage());
+		} catch (InvaildCommand e) {
+			System.out.println(e.getMessage());
+		} catch (UnknownVariable e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }

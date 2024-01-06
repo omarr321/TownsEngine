@@ -46,7 +46,7 @@ public class TitleScene<T extends Scene> extends Scene {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	public void setCredit(String credit) {this.credit = credit; }
 	/**
 	 * This adds the Scene that will play after this Scene.
 	 * @param startScene - The Scene that starts the story off

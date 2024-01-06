@@ -10,7 +10,10 @@ import Engine.scenes.Scene;
 public class Option<T extends Scene> {
 	private String optionText;
 	private Scene nextScene;
-	
+
+	public Option() {
+		this(null, null);
+	}
 	public Option(String text) {
 		this(text, null);
 	}

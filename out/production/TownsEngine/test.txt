@@ -2,17 +2,39 @@
 start = .CreateStart
 > Sets up the start scene with a title, description, and text.
 start.addTitle "Example Story #1"
-start.addDesc "This is an example story that has two scenes in it"
-start.addText "You wake up in your bed"
+start.addDesc "This is an example story that has a few scenes in it."
+start.addCredit "Omar Radwan"
 
-> Creates a dead-end scene.
-end = .CreateDeadEnd
-> Sets up the dead-end scene
-end.addText "You go back to sleep"
+> Creates the first scene
+firstScene = .CreateScene
+firstScene.addText "You wake up in your bed. The light is shining thought the window."
+> Options for firstScene
+firstSceneOp1 = .CreateOption
+firstSceneOp1.addText "Get up"
+firstSceneOp2 = .CreateOption
+firstSceneOp2.addText "Go back to sleep"
+> Links the options to the first scene
+firstScene.addOption firstSceneOp1
+firstScene.addOption firstSceneOp2
+> Adds this scene as the start scene
+start.addNextScene firstScene
 
-> Creates a new option that is "Go back to sleep".
-option1 = .CreateOption "Go back to sleep"
-> Links the option to the dead-end scene.
-option1.link end
-> Adds the option to the start scene.
-start.addOption option1
+> Creates a dead end if you choose to go back to sleep
+deadEndSleep = .CreateDeadEnd
+deadEndSleep.addText "You close your eyes and after a while drift off back to sleep."
+> Links the dead end to the option where you go to sleep
+firstSceneOp2.link deadEndSleep
+
+> Creates a scene for if you get
+getUp = .CreateScene
+getUp.addText "You get up and stretch your arms. You look around the room."
+> Options for getUp scene
+getUpOp1 = .CreateOption
+getUpOp1.addText "Look out the window"
+getUpOp2 = .CreateOption
+getUpOp2.addText "Get ready for the day"
+> Links the options to the getUp scene
+getUp.addOption getUpOp1
+getUp.addOption getUpOp2
+> Adds this getUp scene to the option
+firstSceneOp1.link getUp
