@@ -9,7 +9,7 @@ import Engine.other.Player;
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class Deadend extends Scene {
+public class Deadend<T extends Scene> extends Scene {
 
     public Deadend() {
         this(null);

@@ -9,7 +9,7 @@ import Engine.other.Player;
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class TitleScene extends Scene {
+public class TitleScene<T extends Scene> extends Scene {
 	private Scene nextScene;
 	private String credit;
 	private String title;
@@ -32,7 +32,7 @@ public class TitleScene extends Scene {
 		this(title, text, credit, null);
 	}
 	
-	public <T extends Scene> TitleScene(String title, String text, String credit, T startScene) {
+	public TitleScene(String title, String text, String credit, T startScene) {
 		this.title = title;
 		this.credit = credit;
 		this.setText(text);
@@ -51,9 +51,8 @@ public class TitleScene extends Scene {
 	 * This adds the Scene that will play after this Scene.
 	 * @param startScene - The Scene that starts the story off
 	 * @param player - The Player
-	 * @param <T> - Any class that extends Scene
 	 */
-	public <T extends Scene> void addStartScene(T startScene, Player player) {
+	public void addStartScene(T startScene, Player player) {
 		this.nextScene = startScene;
 	}
 

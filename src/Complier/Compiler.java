@@ -1,9 +1,10 @@
 package Complier;
 
 import Complier.Errors.NoFileSet;
+import Engine.other.Option;
+import Engine.scenes.*;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -13,14 +14,16 @@ import java.io.IOException;
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class Complier {
+public class Compiler<T extends Scene> {
     private String filePath;
-    public Complier() {
+    private DataMgmt dataMgmt;
+    public Compiler() {
         this("");
     }
 
-    public Complier(String filePath) {
+    public Compiler(String filePath) {
         this.filePath = filePath;
+        dataMgmt = new DataMgmt<>();
     }
 
     /**
@@ -54,11 +57,7 @@ public class Complier {
                             multilineComment = true;
                         }
                     } else {
-                        String[] currCommand = this.convertCommand(line);
-                        for (String command : currCommand) {
-                            System.out.print(command + ", ");
-                        }
-                        System.out.print("\n");
+                        this.processCmd(this.convertCommand(line));
                     }
                 } else {
                     if (line.substring(line.length()-2, line.length()).equals("<<")){
@@ -69,7 +68,7 @@ public class Complier {
         }
     }
 
-    public String[] convertCommand(String command) {
+    private String[] convertCommand(String command) {
         char[] currCommand = command.toCharArray();
         String variableName = "";
         String commandName = "";
@@ -105,5 +104,54 @@ public class Complier {
         }
 
         return new String[]{newVar, variableName, commandName, commandArgs};
+    }
+
+    private void processCmd(String[] cmdArr) {
+        switch(cmdArr[0]) {
+            case "0":
+                if (dataMgmt.hasKey(cmdArr[1])) {
+                    this.processSubCmd((T) dataMgmt.getValue(cmdArr[1]));
+                } else if (dataMgmt.hasKey_O(cmdArr[1])) {
+                    this.processSubCmd(dataMgmt.getValue_O(cmdArr[1]));
+                } else {
+                    //TODO: Throw variable doesn't exist error
+                }
+                break;
+            case "1":
+                if (cmdArr[2].equals("CreateOption")) {
+                    dataMgmt.setKey(cmdArr[1], new Option<>(cmdArr[3]));
+                } else if (cmdArr[2].equals("CreateScene")) {
+                    dataMgmt.setKey(cmdArr[1], new Scene());
+                } else {
+                    dataMgmt.setKey(cmdArr[1], this.getNewSceneObj(cmdArr[2]));
+                }
+                break;
+            default:
+                System.out.print("Command Error");
+        }
+    }
+
+    private T getNewSceneObj(String cmd) {
+        switch(cmd){
+            case "CreateStart":
+                return (T) new TitleScene<>();
+            case "CreateSavePoint":
+                return (T) new SavePoint<>();
+            case "CreateTextBlock":
+                return (T) new TextBlock<>();
+            case "CreateDeadEnd":
+                return (T) new Deadend<>();
+            default:
+                //TODO: Throw cmd is incorrect error
+        }
+        return null;
+    }
+
+    private void processSubCmd(T scene) {
+
+    }
+
+    private void processSubCmd(Option option) {
+
     }
 }

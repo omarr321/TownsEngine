@@ -9,7 +9,7 @@ import Engine.other.Option;
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class TextBlock extends Scene {
+public class TextBlock<T extends Scene> extends Scene {
 	private Scene nextScene;
 	
 	public TextBlock() {}
@@ -18,7 +18,7 @@ public class TextBlock extends Scene {
 		super(text);
 	}
 	
-	public <T extends Scene> TextBlock(String text, T scene) {
+	public TextBlock(String text, T scene) {
 		super(text);
 		this.setNextScene(scene);
 	}
@@ -26,9 +26,8 @@ public class TextBlock extends Scene {
 	/**
 	 * Set the next Scene of this Scene
 	 * @param scene - The next Scene
-	 * @param <T> - Any class that extends Scene
 	 */
-	public <T extends Scene> void setNextScene(T scene) {
+	public void setNextScene(T scene) {
 		this.nextScene = scene;
 	}
 

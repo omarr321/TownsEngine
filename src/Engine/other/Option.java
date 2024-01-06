@@ -7,14 +7,14 @@ import Engine.scenes.Scene;
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class Option {
+public class Option<T extends Scene> {
 	private String optionText;
 	private Scene nextScene;
 	
 	public Option(String text) {
 		this(text, null);
 	}
-	public <T extends Scene> Option(String text, T scene) {
+	public Option(String text, T scene) {
 		this.optionText = text;
 		this.nextScene = scene;
 	}
@@ -40,7 +40,7 @@ public class Option {
 	 * @param scene - The Scene that this Option will go to
 	 * @param <T> - Any class that extends Scene
 	 */
-	public <T extends Scene> void setScene(T scene) {
+	public void setScene(T scene) {
 		this.nextScene = scene;
 	}
 

@@ -9,7 +9,7 @@ import Engine.other.Option;
  * @author Omar M. Radwan
  * @version 1.0.0
  */
-public class SavePoint extends Scene {
+public class SavePoint<T extends Scene> extends Scene {
 	private Scene nextScene;
 	private String oldText = null;
 
@@ -20,7 +20,7 @@ public class SavePoint extends Scene {
 	public SavePoint(String text) {
 		this(text, null);
 	}
-	public <T extends Scene> SavePoint(String text, T scene) {
+	public SavePoint(String text, T scene) {
 		super(text);
 		this.nextScene = scene;
 	}

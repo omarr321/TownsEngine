@@ -1,10 +1,7 @@
 package Engine;
 
+import Complier.Compiler;
 import Complier.Errors.NoFileSet;
-import Engine.other.Option;
-import Engine.other.Player;
-import Engine.scenes.*;
-import Complier.*;
 
 import java.io.IOException;
 
@@ -49,7 +46,7 @@ public class test {
 		user.play();
 		 */
 
-		Complier test = new Complier();
+		Compiler test = new Compiler();
 		test.setFilePath("F:\\IdeaProjects\\TownsEngine\\src\\test.txt");
 		try {
 			test.compile();
