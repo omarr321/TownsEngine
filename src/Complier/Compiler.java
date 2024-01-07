@@ -232,16 +232,16 @@ public class Compiler<T extends Scene> {
         return null;
     }
 
-    private Scene checkVar(Scene variable, int lineNum, String cmd) throws InvaildCommand {
+    private Scene checkVar(Scene variable, int lineNum, String cmd) throws UnknownVariable {
         if (variable == null) {
-            throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN COMMAND - " + cmd);
+            throw new UnknownVariable("ERROR AT LINE " + lineNum + ": UNKNOWN VARIABLE - " + cmd);
         }
         return variable;
     }
 
-    private Option checkVar_O(Option variable, int lineNum, String cmd) throws InvaildCommand {
+    private Option checkVar_O(Option variable, int lineNum, String cmd) throws UnknownVariable {
         if (variable == null) {
-            throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN COMMAND - " + cmd);
+            throw new UnknownVariable("ERROR AT LINE " + lineNum + ": UNKNOWN VARIABLE - " + cmd);
         }
         return variable;
     }

@@ -1,3 +1,14 @@
+>>
+This is for not of stuff i need to fix in the wiki.
+- Update .CreateOption so the main page shows all subcommands
+- Update .CreateStart so it has the .addCredit subcommands
+- Update .CreateStart so .addText is .addDesc
+- Update .CreateStart on the main page so it shows the correct subcommands
+- Update .CreateTextblock main page because there is an extra space in the subcommands
+- Update the Commands page to reflect the changes
+- Update Example Stories, so they work again with the new changes
+<<
+
 > Creates a start scene.
 start = .CreateStart
 > Sets up the start scene with a title, description, and text.
@@ -43,3 +54,31 @@ firstSceneOp1.link getUp
 lookingWindow = .CreateDeadEnd
 lookingWindow.addText "You look out the window. You see some birds singing on a tree. As you listen to the birds, you fall out the window. As you hit the ground you neck breaks, killing you instantly."
 getUpOp1.link lookingWindow
+
+> Creates a Text Block for getting ready for the day
+getReadyPt1 = .CreateTextBlock
+getReadyPt1.addText "You head over to the dresser and open it. You see all your cloths neatly arranged and folded. After a while, you pick out some cloths and head to the bathroom to shower."
+getUpOp2.link getReadyPt1
+
+> Creates a save point for after the shower
+getReadyPt2 = .CreateSavePoint
+getReadyPt2.addText "After the shower you head back to your room. You put on your clothes and take a look in the mirror. You are ready for the day."
+> Links the get ready to the previous one
+getReadyPt1.link getReadyPt2
+
+>More Story
+headingToWork = .CreateScene
+headingToWork.addText "You head out of your room and head downstairs into your kitchen. You realize you should probably eat something, you should have enough time."
+> Creates the options for the scene
+headingToWorkOp1 = .CreateOption
+headingToWorkOp1.addText "Skip breakfast and head right to work"
+headingToWorkOp2 = .CreateOption
+headingToWorkOp2.addText "Make a quick breakfast of eggs"
+headingToWorkOp3 = .CreateOption
+headingToWorkOp3.addText "Make a longer breakfast of pancakes and bacon and eggs"
+> Linking to options to the scene
+headingToWork.addOption headingToWorkOp1
+headingToWork.addOption headingToWorkOp2
+headingToWork.addOption headingToWorkOp3
+> Linking heading to work to the save
+getReadyPt2.link headingToWork

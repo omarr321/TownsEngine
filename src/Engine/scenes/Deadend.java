@@ -27,12 +27,12 @@ public class Deadend<T extends Scene> extends Scene {
     public void compileScene(Player player) {
         this.deleteAllOptions();
 
-        Option deadend1 = new Option("Go back to last Scene");
+        Option deadend1 = new Option("Go back to the last Scene");
         deadend1.setScene(player.getLastScene());
         this.addOption(deadend1);
 
         if (player.getSaveScene() != null) {
-            Option deadend2 = new Option("Go back to last save");
+            Option deadend2 = new Option("Go back to the last save");
             deadend2.setScene(player.getSaveScene());
             this.addOption(deadend2);
         }

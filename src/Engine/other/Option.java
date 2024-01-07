@@ -61,6 +61,10 @@ public class Option<T extends Scene> {
 	 */
 	@Override
 	public String toString() {
-		return this.optionText;
+		String temp = this.optionText;
+		if (this.nextScene == null) {
+			temp = temp + "*";
+		}
+		return temp;
 	}
 }

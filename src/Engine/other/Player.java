@@ -67,6 +67,14 @@ public class Player {
 		this.startScene = scene;
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	/**
 	 * The main loop of the engine. This prints the Scene and options and wait for the user to choose an Option and moves to the appropriate Scene
 	 */
