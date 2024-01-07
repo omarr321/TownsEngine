@@ -174,7 +174,7 @@ public class Compiler<T extends Scene> {
                                 ((Scene) dataMgmt.getValue(cmdArr[1])).setText(this.removeQuotes(cmdArr[3]));
                                 break;
                             case "addOption":
-                                ((Scene) dataMgmt.getValue(cmdArr[1])).addOption(dataMgmt.getValue_O(this.removeQuotes(cmdArr[3])));
+                                ((Scene) dataMgmt.getValue(cmdArr[1])).addOption(this.checkVar_O(dataMgmt.getValue_O(this.removeQuotes(cmdArr[3])), lineNum, cmd));
                                 break;
                             default:
                                 throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN COMMAND - " + cmd);
@@ -188,10 +188,10 @@ public class Compiler<T extends Scene> {
                             dataMgmt.getValue_O(cmdArr[1]).setText(this.removeQuotes(cmdArr[3]));
                             break;
                         case "link":
-                            dataMgmt.getValue_O(cmdArr[1]).setScene(dataMgmt.getValue(this.removeQuotes(cmdArr[3])));
+                            dataMgmt.getValue_O(cmdArr[1]).setScene(this.checkVar(dataMgmt.getValue(this.removeQuotes(cmdArr[3])), lineNum, cmd));
                             break;
                         default:
-                            throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN VARIABLE - " + cmd);
+                            throw new InvaildCommand("ERROR AT LINE " + lineNum + ": COMMAND - " + cmd);
                     }
                 } else {
                     throw new UnknownVariable("ERROR AT LINE " + lineNum + ": UNKNOWN VARIABLE - " + cmd);
@@ -234,7 +234,14 @@ public class Compiler<T extends Scene> {
 
     private Scene checkVar(Scene variable, int lineNum, String cmd) throws InvaildCommand {
         if (variable == null) {
-            throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN VARIABLE - " + cmd);
+            throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN COMMAND - " + cmd);
+        }
+        return variable;
+    }
+
+    private Option checkVar_O(Option variable, int lineNum, String cmd) throws InvaildCommand {
+        if (variable == null) {
+            throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN COMMAND - " + cmd);
         }
         return variable;
     }

@@ -25,7 +25,7 @@ deadEndSleep.addText "You close your eyes and after a while drift off back to sl
 > Links the dead end to the option where you go to sleep
 firstSceneOp2.link deadEndSleep
 
-> Creates a scene for if you get
+> Creates a scene for if you get up
 getUp = .CreateScene
 getUp.addText "You get up and stretch your arms. You look around the room."
 > Options for getUp scene
@@ -38,3 +38,8 @@ getUp.addOption getUpOp1
 getUp.addOption getUpOp2
 > Adds this getUp scene to the option
 firstSceneOp1.link getUp
+
+> Creates a Dead End for looking out the window
+lookingWindow = .CreateDeadEnd
+lookingWindow.addText "You look out the window. You see some birds singing on a tree. As you listen to the birds, you fall out the window. As you hit the ground you neck breaks, killing you instantly."
+getUpOp1.link lookingWindow
