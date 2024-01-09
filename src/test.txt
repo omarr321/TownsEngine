@@ -82,3 +82,26 @@ headingToWork.addOption headingToWorkOp2
 headingToWork.addOption headingToWorkOp3
 > Linking heading to work to the save
 getReadyPt2.link headingToWork
+
+> Making the next scenes
+toWorkPt1 = .CreateTextBlock
+toWorkPt1.addText "You walk past the kitchen and head to work right away."
+toWorkPt2 = .CreateTextBlock
+toWorkPt2.addText "You get work making some eggs. Lucky, you still had a few left in the fridge. You decide on scrambled eggs and make it fast. You add some cottage cheese and manage to eat it in the nick of time before leaving for work."
+toWorkPt3 = .CreateTextBlock
+toWorkPt3.addText "YOu get to work making a great breakfast. You put together a feast of eggs, bacon, and pancakes. It takes you a while but it perfect. You realize you are running late for work."
+> Linking the scenes to the breakfast scene
+headingToWorkOp1.link toWorkPt1
+headingToWorkOp2.link toWorkPt2
+headingToWorkOp3.link toWorkPt3
+
+> Making the lateToWork dead end
+lateToWork = .CreateDeadEnd
+lateToWork.addText "You rush out the door. and speed down the road. As you cross an intersection you get T-Boned by a semi-truck killing you instantly"
+headingToWorkOp3.link lateToWork
+
+> Arrive to work
+atWorkPt1 = .CreateDeadEnd
+atWorkPt1.addText "You make it to work ok and start your day."
+headingToWorkOp2.link atWorkPt1
+headingToWorkOp1.link atWorkPt1

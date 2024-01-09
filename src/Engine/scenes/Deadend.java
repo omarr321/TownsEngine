@@ -10,6 +10,7 @@ import Engine.other.Player;
  * @version 1.0.0
  */
 public class Deadend<T extends Scene> extends Scene {
+    private String oldText = null;
 
     public Deadend() {
         this(null);
@@ -25,6 +26,9 @@ public class Deadend<T extends Scene> extends Scene {
      */
     @Override
     public void compileScene(Player player) {
+        if (this.oldText == null) {
+            this.oldText = this.getText();
+        }
         this.deleteAllOptions();
 
         Option deadend1 = new Option("Go back to the last Scene");
@@ -40,5 +44,6 @@ public class Deadend<T extends Scene> extends Scene {
         Option deadend3 = new Option("Go back to the start");
         deadend3.setScene(player.getStartScene());
         this.addOption(deadend3);
+        this.setText(this.oldText + "\n\nYou have reached a Dead End.");
     }
 }
