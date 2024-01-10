@@ -14,7 +14,6 @@ start = .CreateStart
 > Sets up the start scene with a title, description, and text.
 start.addTitle "Example Story #1"
 start.addDesc "This is an example story that has two scenes in it"
-start.addText "You wake up in your bed"
 
 > Creates a dead-end scene.
 end = .CreateDeadEnd
@@ -26,7 +25,7 @@ option1 = .CreateOption "Go back to sleep"
 > Links the option to the dead-end scene.
 option1.link end
 > Adds the option to the start scene.
-start.addOption option1
+start.addNextScene end
 ```
 
 **Graph:**

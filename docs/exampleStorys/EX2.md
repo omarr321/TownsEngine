@@ -10,7 +10,7 @@
 **Code:**
 ```
 > Creates the start scene and sets it up
-start = .CreateStartScene
+start = .CreateStart
 start.addTitle "Example Story #2"
 start.addDesc "This is the first example story"
 start.addText "You wake up in your bed"

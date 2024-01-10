@@ -1,46 +1,65 @@
 package Engine;
 
-import Engine.other.option;
-import Engine.other.player;
-import Engine.scenes.*;
+import Complier.Compiler;
+import Complier.Errors.InvaildCommand;
+import Complier.Errors.NoFileSet;
+import Complier.Errors.UnknownVariable;
+
+import java.io.IOException;
 
 public class test {
 
 	public static void main(String[] args) {
-		titleScene startScene = new titleScene("Test Story", "A story to test this engine", "Omar R.");
+		/*
+		TitleScene startScene = new TitleScene("Test Story", "A story to test this engine", "Omar R.");
 		
-		scene scene1 = new scene("This is the start of a test story!");
-		option scene1_1 = new option("Let's Go!!!!!");
-		option scene1_2 = new option("No, this is the worst!");
+		Scene scene1 = new Scene("This is the start of a test story!");
+		Option scene1_1 = new Option("Let's Go!!!!!");
+		Option scene1_2 = new Option("No, this is the worst!");
 		scene1.addOption(scene1_1);
 		scene1.addOption(scene1_2);
 		
-		scene scene2_1 = new scene("Fuck ya! Let's party!");
+		Scene scene2_1 = new Scene("Fuck ya! Let's party!");
 		scene1_1.setScene(scene2_1);
-		option scene2_1_1 = new option("OK!");
+		Option scene2_1_1 = new Option("OK!");
 		scene2_1.addOption(scene2_1_1);
 
-		scene scene2_2 = new scene("FUCK OFF YOU CUNT!");
+		Scene scene2_2 = new Scene("FUCK OFF YOU CUNT!");
 		scene1_2.setScene(scene2_2);
-		option scene2_2O1 = new option("Do nothing");
+		Option scene2_2O1 = new Option("Do nothing");
 		scene2_2.addOption(scene2_2O1);
-		savePoint scene2_save = new savePoint("You take the insult like a champ!");
+		SavePoint scene2_save = new SavePoint("You take the insult like a champ!");
 		scene2_2O1.setScene(scene2_save);
 
-		scene scene_end_thing_1 = new deadend("Time to go dumbass...");
+		Scene scene_end_thing_1 = new Deadend("Time to go dumbass...");
 		scene2_save.setNextScene(scene_end_thing_1);
 
-		scene scene3_1 = new scene("According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.");
+		Scene scene3_1 = new Scene("According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.");
 		scene2_1_1.setScene(scene3_1);
 		
-		textBlock textBlock1 = new textBlock("This is a text block. There is only one option.", scene1);
+		TextBlock textBlock1 = new TextBlock("This is a text block. There is only one Option.", scene1);
 		
-		option scene3_2 = new option("This next scene is a textblock", textBlock1);
+		Option scene3_2 = new Option("This next Scene is a textblock", textBlock1);
 		scene3_1.addOption(scene3_2);
 		
-		player user = new player("Billy", startScene);
+		Player user = new Player("Billy", startScene);
 		
 		startScene.addStartScene(scene1, user);
 		user.play();
+		 */
+
+		Compiler test = new Compiler();
+		test.setFilePath("F:\\IdeaProjects\\TownsEngine\\src\\test.txt");
+		try {
+			test.compile();
+		} catch (NoFileSet e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} catch (InvaildCommand e) {
+			System.out.println(e.getMessage());
+		} catch (UnknownVariable e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }
