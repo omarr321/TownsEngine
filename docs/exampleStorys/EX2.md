@@ -13,8 +13,10 @@
 start = .CreateStart
 start.addTitle "Example Story #2"
 start.addDesc "This is the first example story"
-start.addText "You wake up in your bed"
 
+> Creates the first scene
+firstScene = .CreateScene
+firstScene.addText "You wake up in your bed"
 > Creating the options for the start scene
 start_o1 = .CreateOption
 start_o1.addText "Get up"
@@ -22,11 +24,12 @@ start_o2 = .CreateOption
 start_o2.addText "Go back to sleep"
 start_o3 = .CreateOption
 start_o3.addText "Look out the window"
+start.addNextScene firstScene
 
 > Adding the options to the start scene
-start.addOption start_o1
-start.addOption start_o2
-start.addOption start_o3
+firstScene.addOption start_o1
+firstScene.addOption start_o2
+firstScene.addOption start_o3
 
 > Creating the scenes that link to the start scene
 startSleep = .CreateDeadEnd
@@ -59,13 +62,9 @@ startWindow.addOption window_o2
 
 > Creating the scenes needed for the window scene
 windowHandOut = .CreateDeadEnd
-windowHandOut.addText "You put yuor hand out but the bird flys away"
+windowHandOut.addText "You put your hand out but the bird fly's away"
 
 > Linking the scenes
 window_o1.link windowHandOut
 window_o2.link startSleep
 ```
-
-**Graph:**
-
-![Example Story #2 Graph](/ex2Graph.svg)
