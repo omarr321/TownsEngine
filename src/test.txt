@@ -66,7 +66,7 @@ getReadyPt2.addText "After the shower you head back to your room. You put on you
 > Links the get ready to the previous one
 getReadyPt1.link getReadyPt2
 
->More Story
+> More Story
 headingToWork = .CreateScene
 headingToWork.addText "You head out of your room and head downstairs into your kitchen. You realize you should probably eat something, you should have enough time."
 > Creates the options for the scene
