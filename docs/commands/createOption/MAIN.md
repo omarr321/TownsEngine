@@ -50,6 +50,6 @@ text-align: center;
 
 </div>
 
-**Subcommands:** [```.link```](/commands/createOption/LINK.md)**,**[```.addText```](/commands/createOption/ADDTEXT.md)
+**Subcommands:** [```.addText```](/commands/createOption/ADDTEXT.md)**,**[```.link```](/commands/createOption/LINK.md)
 
 ---

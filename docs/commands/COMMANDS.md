@@ -52,7 +52,8 @@ text-align: center;
 |-------------------------------------------------:|:---------------------------------------|
 |   [.addTitle](/commands/createStart/ADDTITLE.md) | Adds a title to the start scene.       |
 |     [.addDesc](/commands/createStart/ADDDESC.md) | Adds a description to the start scene. |
-| [.addCredit](/commands/createStart/ADDCREDIT.md) | Adds credit to the story               |                                       |
+| [.addCredit](/commands/createStart/ADDCREDIT.md) | Adds credit to the story               |
+| [.addNextScene](/commands/createStart/ADDNEXTSCENE.md) | Adds the next scene to the start scene |
 
 | [.CreateSavePoint](/commands/createSavePoint/MAIN.md) | Creates a save point scene. |
 |------------:|:--------------------|
