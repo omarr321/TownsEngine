@@ -48,12 +48,11 @@ text-align: center;
 | [.addText](/commands/createScene/ADDTEXT.md) | Adds text the the scene or changes existing text. |
 | [.addOption](/commands/createScene/ADDOPTION.md) | Adds an option to the scene. |
 
-| [.CreateStart](/commands/createStart/MAIN.md) | Creates a start scene. |
-|------------:|:--------------------|
-| [.addTitle](/commands/createStart/ADDTITLE.md) | Adds a title to the start scene. |
-| [.addDesc](/commands/createStart/ADDDESC.md) | Adds a description to the start scene. |
-| [.addText](/commands/createStart/ADDTEXT.md) | Adds text to the start scene or changes existing text. |
-| [.addOption](/commands/createStart/ADDOPTION.md) | Adds an option to the start scene. |
+|    [.CreateStart](/commands/createStart/MAIN.md) | Creates a start scene.                 |
+|-------------------------------------------------:|:---------------------------------------|
+|   [.addTitle](/commands/createStart/ADDTITLE.md) | Adds a title to the start scene.       |
+|     [.addDesc](/commands/createStart/ADDDESC.md) | Adds a description to the start scene. |
+| [.addCredit](/commands/createStart/ADDCREDIT.md) | Adds credit to the story               |                                       |
 
 | [.CreateSavePoint](/commands/createSavePoint/MAIN.md) | Creates a save point scene. |
 |------------:|:--------------------|
