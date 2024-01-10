@@ -1,5 +1,5 @@
 ![logo](_media/icon.png)
-# TownsEngine <small>Pre-Release</small>
+# TownsEngine <small>v1.0.0</small>
 
 > A simple scripting language and interpreter to make branching stories.
 
