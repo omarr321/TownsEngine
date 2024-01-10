@@ -51,6 +51,6 @@ text-align: center;
 
 </div>
 
-**Subcommands:**[```.addTitle```](/commands/createStart/ADDTITLE.md)**,**[```.addDesc```](/commands/createStart/ADDDESC.md)**,**[```.addCredit```](/commands/createStart/ADDCREDIT.md)
+**Subcommands:**[```.addTitle```](/commands/createStart/ADDTITLE.md)**,**[```.addDesc```](/commands/createStart/ADDDESC.md)**,**[```.addCredit```](/commands/createStart/ADDCREDIT.md)**,**[```.addNextScene```](/commands/createStart/ADDNEXTSCENE.md)
 
 ---
