@@ -1,14 +1,14 @@
 ---
-| [**BACK TO HOME**](/README.md) | [**BACK TO COMMANDS**](/commands/COMMANDS.md) |
+| [**BACK TO HOME**](/README.md) | [**BACK TO START**](/commands/createStart/MAIN.md) |
 
 ---
-# .CreateScene
+# .CreateStart.addDesc
 
 **About:**
-```.CreateScene``` is used to create an empty scene. You can options to to the scene.
+```.addCredit``` is used to add credit of who made the story.
 
 **Usage:**
-```<Var> = .CreateScene```
+```<StartScene>.addCredit <Credit>```
 
 **Args:**
 
@@ -43,12 +43,11 @@ text-align: center;
 
 <div class="niceTables">
 
-| | |
-|------------:|:--------------------|
-| \<Var\> | Any variable |
+|                | |
+|---------------:|:--------------------|
+| \<StartScene\> | Any variable that contains a StartScene |
+|     \<Credit\> | Any string |
 
 </div>
-
-**Subcommands:** [```.addText```](/commands/createScene/ADDTEXT.md)**,**[```.addOption```](/commands/createScene/ADDOPTION.md)
 
 ---
