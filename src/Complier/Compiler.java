@@ -85,6 +85,7 @@ public class Compiler<T extends Scene> {
         String commandArgs = "";
         String newVar = "0";
         int stepCount = 0;
+
         for (int i = 0; i < currCommand.length; i++) {
             if (stepCount == 0) {
                 Character.compare(currCommand[i], ' ');
