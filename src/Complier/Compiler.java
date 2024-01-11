@@ -202,7 +202,7 @@ public class Compiler<T extends Scene> {
                 if (cmdArr[2].equals("CreateOption")) {
                     dataMgmt.setKey(cmdArr[1], new Option<>());
                 } else {
-                    dataMgmt.setKey(cmdArr[1], this.getNewSceneObj(cmdArr[2], cmdArr[1]));
+                    dataMgmt.setKey(cmdArr[1], this.getNewSceneObj(cmdArr[2], cmdArr[1], lineNum, cmd));
                 }
                 break;
             default:
@@ -210,7 +210,7 @@ public class Compiler<T extends Scene> {
         }
     }
 
-    private T getNewSceneObj(String cmd, String varName) {
+    private T getNewSceneObj(String cmd, String varName, int lineNum, String cmdFull) throws InvaildCommand {
         switch(cmd){
             case "CreateScene":
                 this.dataMgmt.setKeyType(varName, new Scene());
@@ -229,8 +229,9 @@ public class Compiler<T extends Scene> {
             case "CreateDeadEnd":
                 this.dataMgmt.setKeyType(varName, new Deadend<>());
                 return (T) new Deadend<>();
+            default:
+                throw new InvaildCommand("ERROR AT LINE " + lineNum + ": UNKNOWN VARIABLE - " + cmdFull);
         }
-        return null;
     }
 
     private Scene checkVar(Scene variable, int lineNum, String cmd) throws UnknownVariable {
