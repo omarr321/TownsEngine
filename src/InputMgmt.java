@@ -35,6 +35,9 @@ public class InputMgmt {
                 System.out.println("What is the file path for the town file? (.town)");
                 System.out.print(">>>");
                 fPath = userIn.nextLine();
+                if (fPath.toLowerCase().equals("quit")) {
+                    System.exit(0);
+                }
             }
             File f = new File(fPath);
             if(f.exists() && f.isFile()) {

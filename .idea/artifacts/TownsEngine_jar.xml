@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="TownsEngine:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TownsEngine_jar</output-path>
+    <root id="root">
+      <element id="archive" name="TownsEngine.jar">
+        <element id="module-output" name="TownEngine" />
+      </element>
+    </root>
+  </artifact>
+</component>
