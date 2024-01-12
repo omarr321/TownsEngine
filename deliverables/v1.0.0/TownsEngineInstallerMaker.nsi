@@ -55,11 +55,15 @@ Section "TownsEngine (required)"
   
 SectionEnd
 
+!define ASSOC_EXT_ND "town"
 !define ASSOC_EXT ".town"
 !define ASSOC_PROGID "Towns.Engine"
 !define ASSOC_VERB "TownsEngine"
 !define ASSOC_APPEXE "townsEngineF.bat"
 Section /o "Open *.town with TownsEngine"
+	DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.town"
+	DeleteRegKey HKCR "${ASSOC_EXT_ND}_auto_file"
+
 	; Register file type
 	WriteRegStr ShCtx "Software\Classes\${ASSOC_PROGID}\DefaultIcon" "" "$INSTDIR\src\icon.ico,0"
 	WriteRegStr ShCtx "Software\Classes\${ASSOC_PROGID}\shell\${ASSOC_VERB}\command" "" '"$INSTDIR\src\${ASSOC_APPEXE}" "%1"'
@@ -121,6 +125,9 @@ Section "Uninstall"
 	
 	DeleteRegKey HKCR "${ASSOC_EXT}"
 	DeleteRegKey HKCR "${ASSOC_PROGID}"
+
+	DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.town"
+	DeleteRegKey HKCR "${ASSOC_EXT_ND}_auto_file"
   
   ; Remove files and uninstaller
   Delete $INSTDIR\test.nsi
