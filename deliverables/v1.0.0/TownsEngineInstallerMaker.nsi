@@ -1,5 +1,5 @@
 ; Name of Installer
-Name "TownsEngine"
+Name "Towns Engine"
 
 OutFile "TownsEngineInstallerV1.0.0.exe"
 
@@ -47,7 +47,8 @@ Section "TownsEngine (required)"
   WriteRegStr HKLM SOFTWARE\TOWNSENGINE "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "DisplayName" "TownsEngine"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "DisplayName" "Towns Engine"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "DisplayIcon" "$INSTDIR\src\icon.ico,0"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "NoRepair" 1
