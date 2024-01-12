@@ -67,7 +67,7 @@ public class TitleScene<T extends Scene> extends Scene {
 		}
 		this.deleteAllOptions();
 
-		super.setText(this.title + "\n\n" + this.oldText + "\nNOTE: Type \"quit\" anytime to exit the program.");
+		super.setText(this.title + "\n\n" + this.oldText);
 		
 		Option back = new Option("Back", this);
 		

@@ -1,7 +1,16 @@
-; Name of Installer
-Name "Towns Engine"
+;!-!GEN INFO!-!
+!define NAME "Towns Engine"
+!define INSTALLNAME "TownsEngine"
+!define VERSION "v1.0.0"
+!define SCRIPTDIR "F:\IdeaProjects\TownsEngine\deliverables\v1.0.0"
+;!-!GEN INFO!-!
 
-OutFile "TownsEngineInstallerV1.0.0.exe"
+
+
+; Name of Installer
+Name "${NAME}"
+
+OutFile "${NAME}Installer_${VERSION}.exe"
 
 ; Request application privileges for Windows Vista and higher
 RequestExecutionLevel admin
@@ -10,29 +19,64 @@ RequestExecutionLevel admin
 Unicode True
 
 ; The default installation directory
-InstallDir $PROGRAMFILES\TownsEngine
+InstallDir $PROGRAMFILES\${INSTALLNAME}
 
 ; Registry key to check for directory (so if you install again, it will 
 ; overwrite the old one automatically)
-InstallDirRegKey HKLM "Software\TOWNSENGINE" "Install_Dir"
+InstallDirRegKey HKLM "Software\${INSTALLNAME}" "Install_Dir"
 
 !include LogicLib.nsh
 !include WinCore.nsh
 !include Integration.nsh
 
 ;--------------------------------
-; Pages
+; Modern UI 2 stuff
 
-Page components
-Page directory
-Page instfiles
+; Addes Modern UI 2
+!include MUI2.nsh
 
-UninstPage uninstConfirm
-UninstPage instfiles
+;--------------------------------
+;Interface Configuration
+
+!define MUI_ICON "${SCRIPTDIR}\src\icon.ico"
+!define MUI_UNICON "${SCRIPTDIR}\src\icon.ico"
 
 ;--------------------------------
 
-Section "TownsEngine (required)"
+; Setting some basic stuff
+!define MUI_COMPONENTSPAGE_SMALLDESC ;No value
+!define MUI_INSTFILESPAGE_COLORS "339933 000000" ;Two colors
+!define MUI_FINISHPAGE_NOAUTOCLOSE
+!define MUI_WELCOMEPAGE_TITLE "${NAME} ${VERSION}"
+!define MUI_WELCOMEPAGE_TEXT "TownsEngine is a simple scripting language that you can use to create branching stories easily. This engine is only used for text-based stories as there is no graphical elements available. It is designed to be simple to use and easy to understand."
+
+; defines pages parms
+; Lincense page
+!define MUI_LICENSEPAGE_CHECKBOX
+!define MUI_LICENSEPAGE_CHECKBOX_TEXT "I Accept"
+
+; Finish page
+!define MUI_FINISHPAGE_SHOWREADME https://omarr321.github.io/TownsEngine/#/
+!define MUI_FINISHPAGE_SHOWREADME_TEXT "Open Wiki"
+!define MUI_FINISHPAGE_NOREBOOTSUPPORT
+
+; Inserting Pages
+!insertmacro MUI_PAGE_WELCOME
+!insertmacro MUI_PAGE_LICENSE "${SCRIPTDIR}\LICENSE.txt"
+!insertmacro MUI_PAGE_COMPONENTS
+!insertmacro MUI_PAGE_DIRECTORY
+!insertmacro MUI_PAGE_INSTFILES
+!insertmacro MUI_PAGE_FINISH
+
+!insertmacro MUI_UNPAGE_WELCOME
+!insertmacro MUI_UNPAGE_CONFIRM
+!insertmacro MUI_UNPAGE_INSTFILES
+!insertmacro MUI_UNPAGE_FINISH
+
+; Languages
+!insertmacro MUI_LANGUAGE "English"
+
+Section "${NAME} (required)" Engine
   SectionIn RO
   
 
@@ -44,14 +88,14 @@ Section "TownsEngine (required)"
   File "README.txt"
   
   ; Write the installation path into the registry
-  WriteRegStr HKLM SOFTWARE\TOWNSENGINE "Install_Dir" "$INSTDIR"
+  WriteRegStr HKLM SOFTWARE\${INSTALLNAME} "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "DisplayName" "Towns Engine"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "DisplayIcon" "$INSTDIR\src\icon.ico,0"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "UninstallString" '"$INSTDIR\uninstall.exe"'
-  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "NoModify" 1
-  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine" "NoRepair" 1
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${INSTALLNAME}" "DisplayName" "${NAME}"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${INSTALLNAME}" "DisplayIcon" "$INSTDIR\src\icon.ico,0"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${INSTALLNAME}" "UninstallString" '"$INSTDIR\uninstall.exe"'
+  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${INSTALLNAME}" "NoModify" 1
+  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${INSTALLNAME}" "NoRepair" 1
   WriteUninstaller "$INSTDIR\uninstall.exe"
   
 SectionEnd
@@ -59,10 +103,10 @@ SectionEnd
 !define ASSOC_EXT_ND "town"
 !define ASSOC_EXT ".town"
 !define ASSOC_PROGID "Towns.Engine"
-!define ASSOC_VERB "TownsEngine"
+!define ASSOC_VERB "${INSTALLNAME}"
 !define ASSOC_APPEXE "townsEngineF.bat"
-Section /o "Open *.town with TownsEngine"
-	DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.town"
+Section "Open *.town with ${NAME}" Linking
+	DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\${ASSOC_EXT}"
 	DeleteRegKey HKCR "${ASSOC_EXT_ND}_auto_file"
 
 	; Register file type
@@ -72,7 +116,7 @@ Section /o "Open *.town with TownsEngine"
   
 	WriteRegStr ShCtx "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities" "ApplicationDescription" "A simple choose your own adventure sripting language"
 	WriteRegStr ShCtx "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities\FileAssociations" "${ASSOC_EXT}" "${ASSOC_PROGID}"
-	WriteRegStr ShCtx "Software\RegisteredApplications" "TownsEngine" "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities"
+	WriteRegStr ShCtx "Software\RegisteredApplications" "${ASSOC_VERB}" "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities"
   
 	WriteRegStr HKCR "${ASSOC_PROGID}" "" "${ASSOC_VERB}"
 	WriteRegStr HKCR "${ASSOC_PROGID}\DefaultIcon" "" "$INSTDIR\src\icon.ico,0"
@@ -83,37 +127,55 @@ Section /o "Open *.town with TownsEngine"
 	${NotifyShell_AssocChanged}
 SectionEnd
 
-Section /o "Start Menu Shortcut"
-	CreateDirectory "$SMPROGRAMS\TownsEngine"
-	CreateShortcut "$SMPROGRAMS\TownsEngine\Uninstall.lnk" "$INSTDIR\uninstall.exe"
-	SetOutPath "$INSTDIR\src"
-	CreateShortcut "$DESKTOP\TownsEngine.lnk" "$INSTDIR\src\townsEngine.bat" "" "$INSTDIR\src\icon.ico" 0
-	SetOutPath $INSTDIR
-SectionEnd
-
-SubSection "Desktop Shortcuts"
-	Section /o "TownsEngine"
+SectionGroup "Shortcuts" GenShort
+	Section "Start Menu" ShortMenu
+		CreateDirectory "$SMPROGRAMS\${INSTALLNAME}"
+		CreateShortcut "$SMPROGRAMS\${INSTALLNAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 		SetOutPath "$INSTDIR\src"
-		CreateShortcut "$DESKTOP\TownsEngine.lnk" "$INSTDIR\src\townsEngine.bat" "" "$INSTDIR\src\icon.ico" 0
+		CreateShortcut "$DESKTOP\${INSTALLNAME}.lnk" "$INSTDIR\src\townsEngine.bat" "" "$INSTDIR\src\icon.ico" 0
 		SetOutPath $INSTDIR
 	SectionEnd
+	Section "Desktop" ShortDesktop
+		SetOutPath "$INSTDIR\src"
+		CreateShortcut "$DESKTOP\${INSTALLNAME}.lnk" "$INSTDIR\src\townsEngine.bat" "" "$INSTDIR\src\icon.ico" 0
+		SetOutPath $INSTDIR
+	SectionEnd
+SectionGroupEnd
+SectionGroup "Support" GenSupp
+	Section /o "Wiki" SuppWiki
+		CreateDirectory "$DESKTOP\${INSTALLNAME} Support"
+		CreateShortcut "$DESKTOP\${INSTALLNAME} Support\${INSTALLNAME}Wiki.lnk" "https://omarr321.github.io/TownsEngine/#/" "" "$INSTDIR\src\icon.ico" 0
+	SectionEnd
 
-	SubSection "Support"
-		Section /o "Wiki"
-			CreateDirectory "$DESKTOP\TownsEngine Support"
-			CreateShortcut "$DESKTOP\TownsEngine Support\TownsEngineWiki.lnk" "https://omarr321.github.io/TownsEngine/#/" "" "$INSTDIR\src\icon.ico" 0
-		SectionEnd
-
-		Section /o "Examples"
-			CreateDirectory "$DESKTOP\TownsEngine Support"
-			SetOutPath "$DESKTOP\TownsEngine Support"
-			File /r "support\*"
-			SetOutPath $INSTDIR
-			
-		SectionEnd
-	SubSectionEnd
-SubSectionEnd
-
+	Section /o "Examples" SuppEx
+		CreateDirectory "$DESKTOP\${INSTALLNAME} Support"
+		SetOutPath "$DESKTOP\${INSTALLNAME} Support"
+		File /r "support\*"
+		SetOutPath $INSTDIR	
+	SectionEnd
+SectionGroupEnd
+;--------------------------------
+; Decriptions
+; LangString DESC_ ${LANG_ENGLISH} ""
+LangString DESC_Engine  ${LANG_ENGLISH} "The complier for ${NAME}"
+LangString DESC_Linking ${LANG_ENGLISH} "Links the .town ext to be auto opened by the ${NAME} ${VERSION}"
+LangString DESC_ShortMenu ${LANG_ENGLISH} "Adds a shortcut to the Start Menu"
+LangString DESC_ShortDesktop ${LANG_ENGLISH} "Adds a shortcut to your Desktop"
+LangString DESC_SuppWiki ${LANG_ENGLISH} "Adds a link to the wiki to the Support folder on your desktop"
+LangString DESC_SuppEx ${LANG_ENGLISH} "Adds 3 example storys to the Support folder on your desktop"
+LangString DESC_GenShort ${LANG_ENGLISH} "Shortcuts that can be added to your computer"
+LangString DESC_GenSupp ${LANG_ENGLISH} "Support documentation options"
+;Assign language strings to sections
+  !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+    !insertmacro MUI_DESCRIPTION_TEXT ${Engine} $(DESC_Engine)
+	!insertmacro MUI_DESCRIPTION_TEXT ${Linking} $(DESC_Linking)
+	!insertmacro MUI_DESCRIPTION_TEXT ${ShortMenu} $(DESC_ShortMenu)
+	!insertmacro MUI_DESCRIPTION_TEXT ${ShortDesktop} $(DESC_ShortDesktop)
+	!insertmacro MUI_DESCRIPTION_TEXT ${SuppWiki} $(DESC_SuppWiki)
+	!insertmacro MUI_DESCRIPTION_TEXT ${SuppEx} $(DESC_SuppEx)
+	!insertmacro MUI_DESCRIPTION_TEXT ${GenShort} $(DESC_GenShort)
+	!insertmacro MUI_DESCRIPTION_TEXT ${GenSupp} $(DESC_GenSupp)
+  !insertmacro MUI_FUNCTION_DESCRIPTION_END
 ;--------------------------------
 
 ; Uninstaller
@@ -121,13 +183,13 @@ SubSectionEnd
 Section "Uninstall"
   
 	; Remove registry keys
-	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TownsEngine"
+	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${INSTALLNAME}"
 	DeleteRegKey HKLM SOFTWARE\TOWNSENGINE
 	
 	DeleteRegKey HKCR "${ASSOC_EXT}"
 	DeleteRegKey HKCR "${ASSOC_PROGID}"
 
-	DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.town"
+	DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\${ASSOC_EXT}"
 	DeleteRegKey HKCR "${ASSOC_EXT_ND}_auto_file"
   
   ; Remove files and uninstaller
@@ -135,13 +197,13 @@ Section "Uninstall"
   Delete $INSTDIR\uninstall.exe
 
   ; Remove shortcuts, if any
-  Delete "$SMPROGRAMS\TownsEngine\*.lnk"
-  Delete "$DESKTOP\TownsEngine.lnk"
+  Delete "$SMPROGRAMS\${INSTALLNAME}\*.lnk"
+  Delete "$DESKTOP\${INSTALLNAME}.lnk"
 
   ; Remove directories
-  RMDir /r "$SMPROGRAMS\TownsEngine"
+  RMDir /r "$SMPROGRAMS\${INSTALLNAME}"
   RMDir /r "$INSTDIR"
-  RMDir /r "$DESKTOP\TownsEngine Support"
+  RMDir /r "$DESKTOP\${INSTALLNAME} Support"
 
 SectionEnd
 
@@ -163,7 +225,7 @@ Section un.ShellAssoc
 
   # Unregister "Default Programs"
   !ifdef REGISTER_DEFAULTPROGRAMS
-  DeleteRegValue ShCtx "Software\RegisteredApplications" "Nullsoft Test App"
+  DeleteRegValue ShCtx "Software\RegisteredApplications" "${ASSOC_VERB}"
   DeleteRegKey ShCtx "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities"
   DeleteRegKey /IfEmpty ShCtx "Software\Classes\Applications\${ASSOC_APPEXE}"
   !endif
@@ -180,8 +242,6 @@ Section un.ShellAssoc
   DeleteRegKey /IfEmpty HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\${ASSOC_EXT}\OpenWithProgids"
   DeleteRegKey /IfEmpty HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\${ASSOC_EXT}\OpenWithList"
   DeleteRegKey /IfEmpty HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\${ASSOC_EXT}"
-  ;DeleteRegKey HKCU "Software\Microsoft\Windows\Roaming\OpenWith\FileExts\${ASSOC_EXT}"
-  ;DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\${ASSOC_EXT}"
   
   ${NotifyShell_AssocChanged}
 SectionEnd
