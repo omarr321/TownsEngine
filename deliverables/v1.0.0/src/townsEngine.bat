@@ -1,2 +1,2 @@
 @ECHO OFF
-.\jre\bin\java.exe -jar .\TownEngine.jar %*
+.\jre\bin\java.exe -jar .\TownsEngine.jar %*

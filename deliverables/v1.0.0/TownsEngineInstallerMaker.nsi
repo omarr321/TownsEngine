@@ -19,6 +19,7 @@ InstallDirRegKey HKLM "Software\TOWNSENGINE" "Install_Dir"
 !include LogicLib.nsh
 !include WinCore.nsh
 !include Integration.nsh
+
 ;--------------------------------
 ; Pages
 
@@ -58,34 +59,26 @@ SectionEnd
 !define ASSOC_PROGID "Towns.Engine"
 !define ASSOC_VERB "TownsEngine"
 !define ASSOC_APPEXE "townsEngineF.bat"
-Section "Open *.town with TownsEngine"
+Section /o "Open *.town with TownsEngine"
 	; Register file type
 	WriteRegStr ShCtx "Software\Classes\${ASSOC_PROGID}\DefaultIcon" "" "$INSTDIR\src\icon.ico,0"
 	WriteRegStr ShCtx "Software\Classes\${ASSOC_PROGID}\shell\${ASSOC_VERB}\command" "" '"$INSTDIR\src\${ASSOC_APPEXE}" "%1"'
 	WriteRegStr ShCtx "Software\Classes\${ASSOC_EXT}" "" "${ASSOC_PROGID}"
   
-	!ifdef REGISTER_DEFAULTPROGRAMS
 	WriteRegStr ShCtx "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities" "ApplicationDescription" "A simple choose your own adventure sripting language"
 	WriteRegStr ShCtx "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities\FileAssociations" "${ASSOC_EXT}" "${ASSOC_PROGID}"
 	WriteRegStr ShCtx "Software\RegisteredApplications" "TownsEngine" "Software\Classes\Applications\${ASSOC_APPEXE}\Capabilities"
-	!endif
   
-	WriteRegStr HKCR "${ASSOC_EXT}" "" "${ASSOC_PROGID}"
-	WriteRegStr HKCR "${ASSOC_PROGID}" "" "${ASSOC_PROGID}"
-	WriteRegStr HKCR "${ASSOC_VERB}.Settings\DefaultIcon" "" "$INSTDIR\src\icon.ico,0"
-	WriteRegStr HKCR "${ASSOC_VERB}.Name\shell" "" "open"
-	WriteRegStr HKCR "${ASSOC_VERB}.Name\shell\open\command" "" '"$InstDir\src\${ASSOC_APPEXE}" "%1"'
-	WriteRegStr HKCR "${ASSOC_EXT}" "" "${ASSOC_PROGID}"
-	WriteRegStr HKCR "${ASSOC_PROGID}" "" "${ASSOC_PROGID}"
-	WriteRegStr HKCR "${ASSOC_VERB}.Settings\DefaultIcon" "" "$INSTDIR\src\icon.ico,0"
-	WriteRegStr HKCR "${ASSOC_VERB}.Name\shell" "" "open"
-	WriteRegStr HKCR "${ASSOC_VERB}.Name\shell\open\command" "" '"$InstDir\src\${ASSOC_APPEXE}" "%1"'
+	WriteRegStr HKCR "${ASSOC_PROGID}" "" "${ASSOC_VERB}"
+	WriteRegStr HKCR "${ASSOC_PROGID}\DefaultIcon" "" "$INSTDIR\src\icon.ico,0"
+	WriteRegStr HKCR "${ASSOC_PROGID}\shell\open\command" "" '"$INSTDIR\src\${ASSOC_APPEXE}" "%1"'
 
-  
-  ${NotifyShell_AssocChanged}
+	WriteRegStr HKCR "${ASSOC_EXT}" "" "${ASSOC_PROGID}"
+	
+	${NotifyShell_AssocChanged}
 SectionEnd
 
-Section "Start Menu Shortcut"
+Section /o "Start Menu Shortcut"
 	CreateDirectory "$SMPROGRAMS\TownsEngine"
 	CreateShortcut "$SMPROGRAMS\TownsEngine\Uninstall.lnk" "$INSTDIR\uninstall.exe"
 	SetOutPath "$INSTDIR\src"
@@ -94,19 +87,19 @@ Section "Start Menu Shortcut"
 SectionEnd
 
 SubSection "Desktop Shortcuts"
-	Section "TownsEngine"
+	Section /o "TownsEngine"
 		SetOutPath "$INSTDIR\src"
 		CreateShortcut "$DESKTOP\TownsEngine.lnk" "$INSTDIR\src\townsEngine.bat" "" "$INSTDIR\src\icon.ico" 0
 		SetOutPath $INSTDIR
 	SectionEnd
 
 	SubSection "Support"
-		Section "Wiki"
+		Section /o "Wiki"
 			CreateDirectory "$DESKTOP\TownsEngine Support"
 			CreateShortcut "$DESKTOP\TownsEngine Support\TownsEngineWiki.lnk" "https://omarr321.github.io/TownsEngine/#/" "" "$INSTDIR\src\icon.ico" 0
 		SectionEnd
 
-		Section "Examples"
+		Section /o "Examples"
 			CreateDirectory "$DESKTOP\TownsEngine Support"
 			SetOutPath "$DESKTOP\TownsEngine Support"
 			File /r "support\*"
@@ -128,9 +121,6 @@ Section "Uninstall"
 	
 	DeleteRegKey HKCR "${ASSOC_EXT}"
 	DeleteRegKey HKCR "${ASSOC_PROGID}"
-	DeleteRegKey HKCR "${ASSOC_VERB}.Settings\DefaultIcon"
-	DeleteRegKey HKCR "${ASSOC_VERB}.Name\shell"
-	DeleteRegKey HKCR "${ASSOC_VERB}.Name\shell\open\command"
   
   ; Remove files and uninstaller
   Delete $INSTDIR\test.nsi

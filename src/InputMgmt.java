@@ -33,6 +33,7 @@ public class InputMgmt {
             if (fPath.equals("") || pathSet == false) {
                 pathSet = false;
                 System.out.println("What is the file path for the town file? (.town)");
+                System.out.println("NOTE: Type \"quit\" to exit the program.");
                 System.out.print(">>>");
                 fPath = userIn.nextLine();
                 if (fPath.toLowerCase().equals("quit")) {
