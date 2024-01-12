@@ -97,7 +97,8 @@ public class Scene {
 				temp = temp + "\n" + (i+1) + " | " + this.options[i].toString();
 			}
 		}
-		
+
+		temp = temp + "\nType \"quit\" anytime to exit the program";
 		return temp;
 	}
 

@@ -1,2 +1,3 @@
 @ECHO OFF
-.\jre\bin\java.exe -jar .\TownEngine.jar %*
+@title = TownsEngine v1.0.0
+.\jre\bin\java.exe -jar .\TownsEngine.jar %*
