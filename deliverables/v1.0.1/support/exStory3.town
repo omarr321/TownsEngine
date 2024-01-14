@@ -1,0 +1,80 @@
+> Creates a start scene.
+start = .CreateStart
+
+> Sets up the start scene with a title, description, and text.
+start.addTitle "eXit"
+start.addDesc "A game about survival under dark circumstances."
+start.addCredit "Wyatt"
+
+> Creates the first scene
+firstScene = .CreateScene
+start.addNextScene firstScene
+firstScene.addText "You're trapped in a dungeon with your friend. You see a barrel. What do you do?"
+firstSceneOp1 = .CreateOption
+firstSceneOp2 = .CreateOption
+firstSceneOp3 = .CreateOption
+firstSceneOp1.addText "Move the barrel"
+firstSceneOp2.addText "Sit down next to my friend"
+firstSceneOp3.addText "Nothing"
+firstScene.addOption firstSceneOp1
+firstScene.addOption firstSceneOp2
+firstScene.addOption firstSceneOp3
+
+dieAlone = .CreateDeadEnd
+dieAlone.addText "You die alone. How pathetic!"
+firstSceneOp3.link dieAlone
+
+barrelRoll = .CreateScene
+barrelRoll.addText "The barrel rolls aside, and you find a secret tunnel. What do you do?"
+firstSceneOp1.link barrelRoll
+barrelRollOp1 = .CreateOption
+barrelRollOp2 = .CreateOption
+barrelRollOp1.addText "Enter tunnel"
+barrelRollOp2.addText "Go back"
+barrelRollOp2.link firstScene
+barrelRoll.addOption barrelRollOp1
+barrelRoll.addOption barrelRollOp2
+
+savePoint = .CreateSavePoint
+savePoint.addText "You start to escape but your friend is too weak to go with you."
+barrelRollOp1.link savePoint
+
+note = .CreateScene
+note.addText "They hand you a note. What do you do?"
+firstSceneOp2.link note
+savePoint.link note
+noteOp1 = .CreateOption
+noteOp2 = .CreateOption
+noteOp1.addText "Read note"
+noteOp2.addText "Light a match"
+note.addOption noteOp1
+note.addOption noteOp2
+tooDark = .CreateScene
+tooDark.addText "It is too dark to read the note. What do you do?"
+noteOp1.link tooDark
+
+tooDarkOp1 = .CreateOption
+tooDarkOp1.addText "Leave"
+tooDark.addOption tooDarkOp1
+tunnelColl = .CreateTextBlock
+tunnelColl.addText "You leave the tunnel before it collapses and hop onto a boat."
+tooDarkOp1.link tunnelColl
+
+newWorld = .CreateDeadEnd
+newWorld.addText "Congratulations, you're heading to a new world!"
+tunnelColl.link newWorld
+
+lightMatch = .CreateScene
+noteOp2.link lightMatch
+lightMatch.addText "The note says, "Don't leave me here". Do you leave your friend or stay?"
+lightMatchOp1 = .CreateOption
+lightMatchOp1.addText "Leave"
+lightMatchOp1.link tunnelColl
+lightMatchOp2 = .CreateOption
+lightMatchOp2.addText "Stay"
+lightMatch.addOption lightMatchOp1
+lightMatch.addOption lightMatchOp2
+
+final = .CreateDeadEnd
+final.addText ""Its an exciting time in the world.""
+lightMatchOp2.link final

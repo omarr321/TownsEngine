@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class InputMgmt {
     private static final String ENGINE_NAME = "TownsEngine";
-    private static final String ENGINE_VERSION = "v1.0.0";
+    private static final String ENGINE_VERSION = "v1.0.1";
     private static String fPath = "";
     private static boolean pathSet = true;
     public static void main(String[] args) {
