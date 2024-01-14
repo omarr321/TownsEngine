@@ -75,39 +75,47 @@ public class Player {
 		this.name = name;
 	}
 
+
+	public void play() {
+		while(true) {
+			if (this.currScene != null) {
+				Scene temp = this.playScene(this.currScene);
+				this.setScene(temp);
+			} else {
+				break;
+			}
+		}
+	}
+
 	/**
 	 * The main loop of the engine. This prints the Scene and options and wait for the user to choose an Option and moves to the appropriate Scene
 	 */
-	public void play() {
-		if (this.currScene != null) {
-			this.currScene.compileScene(this);
-			Toolbox.printChar(this.currScene.toString(), 10);
-			int optionNum = this.currScene.getNumOfOptions();
-			
+	public Scene playScene(Scene scene) {
+			scene.compileScene(this);
+			Toolbox.printChar(scene.toString(), 10);
+			int optionNum = scene.getNumOfOptions();
+
 			while(true) {
 				System.out.print("\n>>>");
 				String currInString = this.userIn.nextLine();
-				if (currInString.equals("quit") || currInString.equals("Quit")) {
-					return;
+				if (currInString.toLowerCase().equals("quit")) {
+					return null;
 				}
 				try {
 					int currIn = Integer.parseInt(currInString);
 					if (currIn < 1 || currIn > optionNum) {
 						System.out.print("Error: Input is not a valid Option!");
 					} else {
-						this.setScene(this.currScene.getOption(currIn-1).getScene());
-						if (this.lastScene instanceof SavePoint) {
-							if (this.lastScene.getOption(currIn-1).getText().equals("Save the game")) {
-								this.saveScene = this.currScene;
+						if (this.currScene instanceof SavePoint) {
+							if (this.currScene.getOption(currIn-1).getText().equals("Save the game")) {
+								this.saveScene = scene.getOption(currIn-1).getScene();
 							}
 						}
-						break;
+						return scene.getOption(currIn-1).getScene();
 					}
 				} catch (NumberFormatException ex) {
 					System.out.print("Error: Input is not a number!");
 				}
 			}
-			this.play();
-		}
 	}
 }
